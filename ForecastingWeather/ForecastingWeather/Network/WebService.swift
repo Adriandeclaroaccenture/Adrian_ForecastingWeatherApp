@@ -23,9 +23,9 @@ public struct WeatherService {
     private let baseUrl: String = "https://api.openweathermap.org/data/2.5/weather"
     private let weeklybaseUrl: String = "https://api.openweathermap.org/data/2.5/forecast"
     
-    func fetchWeatherData(forCity: String, callback: @escaping ((temp: Float?, pressure: Float?, humidity: Float?, weatherDescription: String)?, WebServiceControllerError?) -> Void)
+    func fetchWeatherData(forCity: String, callback: @escaping ((temp: Float?, pressure: Float?, humidity: Float?, sunrise: Date?, sunset: Date?, weatherDescription: String)?, WebServiceControllerError?) -> Void)
     
- //   func fetchWeatherData(forCity: String, callback: @escaping ((sunrise:Date?, sunset: Date?, weatherDescription: String)?, WebServiceControllerError?) -> Void)
+
     {
         
         let possibleUrl = "\(baseUrl)?q=\(forCity)&appid=\(apiKey)&units=metric"
@@ -48,12 +48,14 @@ public struct WeatherService {
                         guard let weatherDescription = weatherData.weather.first?.description,
                               let temperature = weatherData.main.temp ,
                               let humidity = weatherData.main.humidity ,
-                              let pressure = weatherData.main.pressure else {
+                              let pressure = weatherData.main.pressure,
+                              let sunrise = weatherData.main.sunset,
+                              let sunset = weatherData.main.sunrise else {
                                   print("DATA NOT VALID")
                                   callback(nil, WebServiceControllerError.invalidPayload(url))
                                   return
                               }
-                        callback((temp: temperature, pressure: pressure, humidity: humidity, weatherDescription: weatherDescription), nil)
+                        callback((temp: temperature, pressure: pressure, humidity: humidity, sunrise: sunrise, sunset: sunset, weatherDescription: weatherDescription), nil)
                     }
                     catch let error {
                         callback(nil, WebServiceControllerError.forwarded(error))

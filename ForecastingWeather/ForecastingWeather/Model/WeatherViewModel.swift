@@ -14,8 +14,8 @@ class WeatherViewModel: ObservableObject {
     @Published var temperature: Float?
     @Published var pressure: Float?
     @Published var humidity: Float?
-//    @Published var sunrise: Date?
-//    @Published var sunset: Date?
+    @Published var sunrise: Date?
+    @Published var sunset: Date?
     @Published var weatherDescription: String?
     @Published var backgroundImageUrl: String = ""
     
@@ -32,29 +32,14 @@ class WeatherViewModel: ObservableObject {
                         self.temperature = retrievedWeather.temp
                         self.humidity = retrievedWeather.humidity
                         self.pressure = retrievedWeather.pressure
+                        self.sunrise = retrievedWeather.sunrise
+                        self.sunset = retrievedWeather.sunset
                         self.weatherDescription = retrievedWeather.weatherDescription
                     }
                 }
             }
         }
     }
-//    func fetchData(for sys: String?) {
-//        if let sys = sys {
-//            weatherService.fetchWeatherData(forSys: sys) { sys, error in
-//                guard error == nil else {
-//                    print(error as Any)
-//                    return
-//                }
-//                if let retrievedWeather = sys {
-//                    DispatchQueue.main.async {
-//
-//                        self.sunrise = retrievedWeather.sunrise
-//                        self.sunset = retrievedWeather.sunset
-//                    }
-//                }
-//            }
-//        }
-//    }
 }
 
 

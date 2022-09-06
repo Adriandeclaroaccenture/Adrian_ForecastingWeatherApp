@@ -26,6 +26,8 @@ struct OpenMapWeatherMain: Codable {
     var temp: Float?
     let pressure: Float?
     let humidity: Float?
+    let sunset: Date?
+    let sunrise: Date?
 }
 
 
