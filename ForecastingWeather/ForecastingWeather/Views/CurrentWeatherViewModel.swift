@@ -94,11 +94,13 @@ struct CurrentWeatherViewModel: View {
                                 .lineLimit(2)
                                 .font(.callout)
                                 .foregroundColor(.black)
+                                .fixedSize(horizontal: false, vertical: true)
                             Text("Sunset: \(weatherVM.sunset ?? Date())")
                                 .multilineTextAlignment(.leading)
                                 .lineLimit(2)
                                 .font(.callout)
                                 .foregroundColor(.black)
+                                .fixedSize(horizontal: false, vertical: true)
                             
                         }.padding().background(.ultraThinMaterial,in: RoundedRectangle(cornerRadius: 20)).foregroundColor(.black)
                         Spacer()
