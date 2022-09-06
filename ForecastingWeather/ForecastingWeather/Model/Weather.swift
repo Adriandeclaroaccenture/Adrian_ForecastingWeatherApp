@@ -9,9 +9,11 @@
 import Foundation
 
 
-struct OpenMapWeatherData: Codable {
+struct OpenMapWeatherData: Decodable {
     var weather: [OpenMapWeatherWeather]
     var main: OpenMapWeatherMain
+    var sys: Sys
+    
    
 }
 
@@ -26,8 +28,14 @@ struct OpenMapWeatherMain: Codable {
     var temp: Float?
     let pressure: Float?
     let humidity: Float?
-    let sunset: Date?
-    let sunrise: Date?
+   
+}
+
+struct Sys: Decodable {
+    
+    let sunset: Double?
+    let sunrise: Double?
+
 }
 
 

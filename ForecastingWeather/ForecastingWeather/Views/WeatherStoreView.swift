@@ -1,22 +1,22 @@
+////
+////  WeatherStoreView.swift
+////  ForecastingWeather
+////
+////  Created by john.adrian.de.claro on 8/19/22.
+////
 //
-//  WeatherStoreView.swift
-//  ForecastingWeather
+////Storing saved Cities
 //
-//  Created by john.adrian.de.claro on 8/19/22.
+//import SwiftUI
 //
-
-//Storing saved Cities
-
-import SwiftUI
-
-
-struct WeatherStoreView: App {
-    
-    var body: some Scene {
-        
-        WindowGroup {
-            
-            WeatherListScreenView().environmentObject(Store())
-        }
-    }
-}
+//
+//struct WeatherStoreView: App {
+//
+//    var body: some Scene {
+//
+//        WindowGroup {
+//
+//            WeatherListScreenView().environmentObject(Store())
+//        }
+//    }
+//}

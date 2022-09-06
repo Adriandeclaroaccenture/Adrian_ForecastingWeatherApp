@@ -14,8 +14,8 @@ class WeatherViewModel: ObservableObject {
     @Published var temperature: Float?
     @Published var pressure: Float?
     @Published var humidity: Float?
-    @Published var sunrise: Date?
-    @Published var sunset: Date?
+    @Published var sunrise: Double?
+    @Published var sunset: Double?
     @Published var weatherDescription: String?
     @Published var backgroundImageUrl: String = ""
     

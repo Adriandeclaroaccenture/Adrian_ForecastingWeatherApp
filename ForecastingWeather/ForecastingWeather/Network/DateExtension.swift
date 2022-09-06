@@ -1,21 +1,21 @@
+////
+////  DateExtension.swift
+////  ForecastingWeather
+////
+////  Created by john.adrian.de.claro on 8/19/22.
+////
 //
-//  DateExtension.swift
-//  ForecastingWeather
+////Date Format for List View
 //
-//  Created by john.adrian.de.claro on 8/19/22.
+//import Foundation
 //
-
-//Date Format for List View
-
-import Foundation
-
-
-extension Date {
-    
-    func formatAsString() -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "hh:mm a"
-        return formatter.string(from: self)
-    }
-    
-}
+//
+//extension Date {
+//
+//    func formatAsString() -> String {
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "hh:mm a"
+//        return formatter.string(from: self)
+//    }
+//
+//}

@@ -23,7 +23,8 @@ public struct WeatherService {
     private let baseUrl: String = "https://api.openweathermap.org/data/2.5/weather"
     private let weeklybaseUrl: String = "https://api.openweathermap.org/data/2.5/forecast"
     
-    func fetchWeatherData(forCity: String, callback: @escaping ((temp: Float?, pressure: Float?, humidity: Float?, sunrise: Date?, sunset: Date?, weatherDescription: String)?, WebServiceControllerError?) -> Void)
+    func fetchWeatherData(forCity: String, callback: @escaping ((temp: Float?, pressure: Float?, humidity: Float?, sunrise: Double?, sunset: Double?, weatherDescription: String)?, WebServiceControllerError?) -> Void)
+    
     
 
     {
@@ -49,12 +50,15 @@ public struct WeatherService {
                               let temperature = weatherData.main.temp ,
                               let humidity = weatherData.main.humidity ,
                               let pressure = weatherData.main.pressure,
-                              let sunrise = weatherData.main.sunset,
-                              let sunset = weatherData.main.sunrise else {
+                              let sunrise:Double? = weatherData.sys.sunrise,
+                              let sunset:Double? = weatherData.sys.sunset else {
                                   print("DATA NOT VALID")
                                   callback(nil, WebServiceControllerError.invalidPayload(url))
                                   return
                               }
+                        
+
+                        
                         callback((temp: temperature, pressure: pressure, humidity: humidity, sunrise: sunrise, sunset: sunset, weatherDescription: weatherDescription), nil)
                     }
                     catch let error {

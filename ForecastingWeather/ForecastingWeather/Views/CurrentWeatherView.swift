@@ -10,10 +10,10 @@
 import SwiftUI
 import MapKit
 
-struct CurrentWeatherViewModel: View {
+struct CurrentWeatherView: View {
 //MARK: - Properties
     @ObservedObject private var locationManager = LocationManager()
-    @StateObject var weatherVM: WeatherViewModel = WeatherViewModel()
+    @StateObject var weatherVM = WeatherViewModel()
     @State private var shouldShowErrorBox = false
     @State private var city: String = ""
     @State private var isOn = false
@@ -55,17 +55,13 @@ struct CurrentWeatherViewModel: View {
                         
                         
                         VStack(alignment: .leading, spacing: 20) {
-                            
-                            
-                                
-                          
+                   
                            //Switch Mode
                             Toggle (isOn: $isOn) {
                                 Text("Switch Mode")
                             } .preferredColorScheme(isOn ? .light : .dark)
                             
-                    
-                            
+                       
                             //Search City
                             TextField("", text: $city)
                                 .padding(.bottom, 30)
@@ -75,9 +71,7 @@ struct CurrentWeatherViewModel: View {
                                     if (!city.isEmpty) {
                                         weatherVM.fetchData(for: city)
                                     }
-                                   
-                                       
-                                    
+                          
                                 }
                             
                             Text("\((weatherVM.weatherDescription ?? "").uppercased()) \(String(weatherVM.temperature ?? 0.0)) °C")
@@ -89,19 +83,21 @@ struct CurrentWeatherViewModel: View {
                             Text("Humidity: \(String(weatherVM.humidity ?? 0.0))%")
                                 .font(.callout)
                                 .foregroundColor(.black)
-                            Text("Sunrise: \(weatherVM.sunrise ?? Date())")
-                                .multilineTextAlignment(.leading)
-                                .lineLimit(2)
-                                .font(.callout)
-                                .foregroundColor(.black)
-                                .fixedSize(horizontal: false, vertical: true)
-                            Text("Sunset: \(weatherVM.sunset ?? Date())")
-                                .multilineTextAlignment(.leading)
-                                .lineLimit(2)
-                                .font(.callout)
-                                .foregroundColor(.black)
-                                .fixedSize(horizontal: false, vertical: true)
                             
+                            
+                            Text("Sunrise: \(Date(timeIntervalSince1970: weatherVM.sunrise ?? 0))")
+                                .multilineTextAlignment(.leading)
+                                .lineLimit(2)
+                                .font(.callout)
+                                .foregroundColor(.black)
+                                .fixedSize(horizontal: false, vertical: true)
+                            Text("Sunset: \(Date(timeIntervalSince1970: weatherVM.sunset ?? 0))")
+                                .multilineTextAlignment(.leading)
+                                .lineLimit(2)
+                                .font(.callout)
+                                .foregroundColor(.black)
+                                .fixedSize(horizontal: false, vertical: true)
+
                         }.padding().background(.ultraThinMaterial,in: RoundedRectangle(cornerRadius: 20)).foregroundColor(.black)
                         Spacer()
                         
@@ -119,7 +115,7 @@ struct CurrentWeatherViewModel: View {
     
     struct Home_Previews: PreviewProvider {
         static var previews: some View {
-            CurrentWeatherViewModel()
+            CurrentWeatherView()
         }
     }
 }

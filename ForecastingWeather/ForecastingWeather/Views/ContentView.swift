@@ -22,7 +22,7 @@ struct ContentView: View {
         
         VStack {
 
-            CurrentWeatherViewModel()
+            CurrentWeatherView()
         }
 
 
