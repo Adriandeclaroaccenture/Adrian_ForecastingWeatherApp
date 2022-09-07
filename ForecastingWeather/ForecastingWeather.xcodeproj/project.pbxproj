@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FF1BDEF428ADF00E00FCAE93 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1BDEF328ADF00E00FCAE93 /* LocationManager.swift */; };
-		FF36F7C728C737F800896CDA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF36F7C628C737F800896CDA /* SettingsViewModel.swift */; };
-		FF36F7C928C739C200896CDA /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF36F7C828C739C200896CDA /* SettingsTableViewController.swift */; };
 		FF77E36928ACD1D000EF306C /* ForecastingWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF77E36828ACD1D000EF306C /* ForecastingWeatherApp.swift */; };
 		FF77E36B28ACD1D000EF306C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF77E36A28ACD1D000EF306C /* ContentView.swift */; };
 		FF77E36D28ACD1D200EF306C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF77E36C28ACD1D200EF306C /* Assets.xcassets */; };
@@ -39,8 +37,6 @@
 
 /* Begin PBXFileReference section */
 		FF1BDEF328ADF00E00FCAE93 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		FF36F7C628C737F800896CDA /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
-		FF36F7C828C739C200896CDA /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		FF77E36528ACD1D000EF306C /* ForecastingWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForecastingWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF77E36828ACD1D000EF306C /* ForecastingWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastingWeatherApp.swift; sourceTree = "<group>"; };
 		FF77E36A28ACD1D000EF306C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -156,8 +152,6 @@
 				FF970C6928AF32720041A7B6 /* WeatherList.swift */,
 				FF970C7328AF4D250041A7B6 /* AddWeather.swift */,
 				FF970C7528AF4E4A0041A7B6 /* WeatherView.swift */,
-				FF36F7C628C737F800896CDA /* SettingsViewModel.swift */,
-				FF36F7C828C739C200896CDA /* SettingsTableViewController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -259,11 +253,9 @@
 				FF77E38228ACDE7F00EF306C /* LaunchScreenSplashView.swift in Sources */,
 				FF970C6A28AF32720041A7B6 /* WeatherList.swift in Sources */,
 				FF970C7628AF4E4A0041A7B6 /* WeatherView.swift in Sources */,
-				FF36F7C728C737F800896CDA /* SettingsViewModel.swift in Sources */,
 				FF77E36B28ACD1D000EF306C /* ContentView.swift in Sources */,
 				FF970C6828AF262E0041A7B6 /* WeatherManager.swift in Sources */,
 				FF77E36928ACD1D000EF306C /* ForecastingWeatherApp.swift in Sources */,
-				FF36F7C928C739C200896CDA /* SettingsTableViewController.swift in Sources */,
 				FF970C7028AF49C60041A7B6 /* AddCityView.swift in Sources */,
 				FF970C6E28AF41610041A7B6 /* ConstantsAPI.swift in Sources */,
 				FF77E37C28ACD3BD00EF306C /* WebService.swift in Sources */,

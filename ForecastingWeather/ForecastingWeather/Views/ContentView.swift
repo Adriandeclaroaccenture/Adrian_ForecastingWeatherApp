@@ -23,6 +23,8 @@ struct ContentView: View {
         VStack {
 
             CurrentWeatherView()
+            
+           
         }
 
 
