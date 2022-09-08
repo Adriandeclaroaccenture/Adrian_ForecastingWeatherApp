@@ -15,7 +15,7 @@ struct OpenMapWeatherData: Decodable {
     var weather: [OpenMapWeatherWeather]
 //    let icon: [WeatherIcon]
     var main: OpenMapWeatherMain
-    var sys: Sys
+//    var sys: Sys
     
 //    private enum CodingKeys: String, CodingKey {
 //
@@ -62,12 +62,12 @@ struct OpenMapWeatherMain: Codable {
    
 }
 
-struct Sys: Decodable {
-    
-    let sunset: Double?
-    let sunrise: Double?
-
-}
+//struct Sys: Decodable {
+//
+//    let sunset: Double?
+//    let sunrise: Double?
+//
+//}
 
 //struct WeatherIcon: Decodable {
 //

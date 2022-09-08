@@ -27,6 +27,8 @@ struct CurrentWeatherView: View {
               
                 ZStack {
                     
+                    
+                    
                     Image( "bgBackground")
                         .resizable()
                         .scaledToFill()
@@ -85,18 +87,18 @@ struct CurrentWeatherView: View {
                                 .foregroundColor(.black)
                             
                             
-                            Text("Sunrise: \(Date(timeIntervalSince1970: weatherVM.sunrise ?? 0))")
-                                .multilineTextAlignment(.leading)
-                                .lineLimit(2)
-                                .font(.callout)
-                                .foregroundColor(.black)
-                                .fixedSize(horizontal: false, vertical: true)
-                            Text("Sunset: \(Date(timeIntervalSince1970: weatherVM.sunset ?? 0))")
-                                .multilineTextAlignment(.leading)
-                                .lineLimit(2)
-                                .font(.callout)
-                                .foregroundColor(.black)
-                                .fixedSize(horizontal: false, vertical: true)
+//                            Text("Sunrise: \(Date(timeIntervalSince1970: weatherVM.sunrise ?? 0))")
+//                                .multilineTextAlignment(.leading)
+//                                .lineLimit(2)
+//                                .font(.callout)
+//                                .foregroundColor(.black)
+//                                .fixedSize(horizontal: false, vertical: true)
+//                            Text("Sunset: \(Date(timeIntervalSince1970: weatherVM.sunset ?? 0))")
+//                                .multilineTextAlignment(.leading)
+//                                .lineLimit(2)
+//                                .font(.callout)
+//                                .foregroundColor(.black)
+//                                .fixedSize(horizontal: false, vertical: true)
 
                         }.padding().background(.ultraThinMaterial,in: RoundedRectangle(cornerRadius: 20)).foregroundColor(.black)
                         Spacer()

@@ -23,7 +23,9 @@ public struct WeatherService {
     private let baseUrl: String = "https://api.openweathermap.org/data/2.5/weather"
     private let weeklybaseUrl: String = "https://api.openweathermap.org/data/2.5/forecast"
     
-    func fetchWeatherData(forCity: String, callback: @escaping ((temp: Float?, pressure: Float?, humidity: Float?, sunrise: Double?, sunset: Double?, weatherDescription: String)?, WebServiceControllerError?) -> Void)
+    func fetchWeatherData(forCity: String, callback: @escaping ((temp: Float?, pressure: Float?, humidity: Float?, weatherDescription: String)?, WebServiceControllerError?) -> Void)
+    
+//sunrise: Double?, sunset: Double?,
     
     
 
@@ -49,9 +51,9 @@ public struct WeatherService {
                         guard let weatherDescription = weatherData.weather.first?.description,
                               let temperature = weatherData.main.temp ,
                               let humidity = weatherData.main.humidity ,
-                              let pressure = weatherData.main.pressure,
-                              let sunrise:Double? = weatherData.sys.sunrise,
-                              let sunset:Double? = weatherData.sys.sunset else {
+                              let pressure = weatherData.main.pressure else {
+//                              let sunrise:Double? = weatherData.sys.sunrise,
+//                              let sunset:Double? = weatherData.sys.sunset
                                   print("DATA NOT VALID")
                                   callback(nil, WebServiceControllerError.invalidPayload(url))
                                   return
@@ -59,7 +61,9 @@ public struct WeatherService {
                         
 
                         
-                        callback((temp: temperature, pressure: pressure, humidity: humidity, sunrise: sunrise, sunset: sunset, weatherDescription: weatherDescription), nil)
+                        callback((temp: temperature, pressure: pressure, humidity: humidity,  weatherDescription: weatherDescription), nil)
+                        
+//                    sunrise: sunrise, sunset: sunset,
                     }
                     catch let error {
                         callback(nil, WebServiceControllerError.forwarded(error))

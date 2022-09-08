@@ -24,8 +24,15 @@ struct ContentView: View {
 
             CurrentWeatherView()
             
-           
-        }
+//            CurrentLocationView()
+//            VStack {
+//                HStack {
+//
+//                 
+//
+//                }//Hstack
+//            } //Vstack
+        }// Vstack
 
 
         
