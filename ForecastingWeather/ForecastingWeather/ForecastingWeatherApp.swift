@@ -12,6 +12,8 @@ struct ForecastingWeatherApp: App {
     var body: some Scene {
         WindowGroup {
             LaunchScreenSplashView()
+            //For Observable Object
+                .environmentObject(Store())
         }
     }
 }

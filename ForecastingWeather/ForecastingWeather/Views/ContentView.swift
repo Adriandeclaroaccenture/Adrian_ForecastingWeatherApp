@@ -12,52 +12,36 @@ import SwiftUI
 struct ContentView: View {
 //MARK: - Properties
 //    @EnvironmentObject var store: Store
-//    @State private var isActive: Bool = false
+    @State private var isActive: Bool = false
     
     
     
 //MARK: - Body
     var body: some View {
 
+    
         
-        VStack {
+        NavigationView {
+            VStack {
 
-            CurrentWeatherView()
-            
-//            CurrentLocationView()
-//            VStack {
-//                HStack {
-//
-//                 
-//
-//                }//Hstack
-//            } //Vstack
-        }// Vstack
+                NavigationLink(destination: CurrentWeatherView(), isActive: self.$isActive ) {
+
+                }
+
+                NavigationLink(destination: WeatherListScreenView(), isActive: self.$isActive ) {
+
+                }
+
+                Button("Go to Current Weather") {
+                    self.isActive = true
+                }
+                Button("Add Cities") {
+                    self.isActive = true
+                }
+            }
 
 
-        
-        
-//        NavigationView {
-//            VStack {
-//
-//                NavigationLink(destination: CurrentWeatherViewModel(), isActive: self.$isActive ) {
-//
-//                }
-//
-//                NavigationLink(destination: WeatherListScreenView(), isActive: self.$isActive ) {
-//
-//                }
-//
-//                Button("Go to Current Weather") {
-//                    self.isActive = true
-//                }
-//                Button("Add Cities") {
-//                    self.isActive = true
-//                }
-//            }
-//
-//
-//        }
+        }
      
     }
 }
