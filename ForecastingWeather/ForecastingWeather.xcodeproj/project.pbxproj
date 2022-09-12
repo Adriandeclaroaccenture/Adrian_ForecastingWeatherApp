@@ -33,6 +33,8 @@
 		FF970C7D28AF625E0041A7B6 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF970C7C28AF625E0041A7B6 /* URLImage.swift */; };
 		FF970C8028AF63350041A7B6 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF970C7F28AF63350041A7B6 /* ImageLoader.swift */; };
 		FF970C8228AF645E0041A7B6 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF970C8128AF645E0041A7B6 /* DateExtension.swift */; };
+		FFB6053328CF099F00941F41 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB6053228CF099F00941F41 /* SettingsView.swift */; };
+		FFB6053628CF11F700941F41 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB6053528CF11F700941F41 /* UserDefaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,8 @@
 		FF970C7C28AF625E0041A7B6 /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
 		FF970C7F28AF63350041A7B6 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		FF970C8128AF645E0041A7B6 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		FFB6053228CF099F00941F41 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FFB6053528CF11F700941F41 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 				FF77E37828ACD35500EF306C /* Model */,
 				FF77E37728ACD34500EF306C /* Network */,
 				FF970C7728AF5C340041A7B6 /* Store */,
+				FFB6053428CF11D500941F41 /* Extensions */,
 				FF970C7E28AF631B0041A7B6 /* Icon */,
 				FF77E36C28ACD1D200EF306C /* Assets.xcassets */,
 				FF77E36E28ACD1D200EF306C /* Preview Content */,
@@ -127,6 +132,7 @@
 				FF970C6F28AF49C60041A7B6 /* AddCityView.swift */,
 				FF970C7128AF4C800041A7B6 /* WeatherListScreenView.swift */,
 				FF970C7A28AF5D840041A7B6 /* WeatherStoreView.swift */,
+				FFB6053228CF099F00941F41 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,6 +177,14 @@
 				FF970C7F28AF63350041A7B6 /* ImageLoader.swift */,
 			);
 			path = Icon;
+			sourceTree = "<group>";
+		};
+		FFB6053428CF11D500941F41 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FFB6053528CF11F700941F41 /* UserDefaults.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +261,7 @@
 				FF970C8228AF645E0041A7B6 /* DateExtension.swift in Sources */,
 				FF970C6228AF110D0041A7B6 /* CurrentLocationView.swift in Sources */,
 				FF970C7B28AF5D840041A7B6 /* WeatherStoreView.swift in Sources */,
+				FFB6053628CF11F700941F41 /* UserDefaults.swift in Sources */,
 				FF77E37E28ACD50500EF306C /* WeatherViewModel.swift in Sources */,
 				FF970C6628AF23240041A7B6 /* LoadingView.swift in Sources */,
 				FF970C7428AF4D250041A7B6 /* AddWeather.swift in Sources */,
@@ -258,6 +273,7 @@
 				FF77E36928ACD1D000EF306C /* ForecastingWeatherApp.swift in Sources */,
 				FF970C7028AF49C60041A7B6 /* AddCityView.swift in Sources */,
 				FF970C6E28AF41610041A7B6 /* ConstantsAPI.swift in Sources */,
+				FFB6053328CF099F00941F41 /* SettingsView.swift in Sources */,
 				FF77E37C28ACD3BD00EF306C /* WebService.swift in Sources */,
 				FF970C8028AF63350041A7B6 /* ImageLoader.swift in Sources */,
 				FF970C7228AF4C800041A7B6 /* WeatherListScreenView.swift in Sources */,

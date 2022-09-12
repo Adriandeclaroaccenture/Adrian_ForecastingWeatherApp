@@ -53,7 +53,7 @@ struct WeatherListScreenView: View {
                     case .addNewCity:
                         AddCityView().environmentObject(store)
                     case .currentView:
-                        CurrentWeatherView()
+                        SettingsView().environmentObject(store)
                     }
             })
             
@@ -61,7 +61,7 @@ struct WeatherListScreenView: View {
                     activeSheet = .currentView
                 }) {
                     
-                    Image(systemName: "magnifyingglass.circle.fill")
+                    Image(systemName: "thermometer.sun.fill")
                 }, trailing: Button(action: {
                     activeSheet = .addNewCity
                     
@@ -85,10 +85,14 @@ struct WeatherListScreenView_Previews: PreviewProvider {
     }
 }
 
+
+//MARK: - Struct WeatherCell
 struct WeatherCell: View {
+//MARK: - Property
     
+    @EnvironmentObject var store: Store
     let weather: WeatherView
-    
+//MARK: - Body
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 15) {
@@ -107,7 +111,7 @@ struct WeatherCell: View {
             URLImage(url: Constants.Urls.weatherURLAsStringByIcon(icon: weather.icon))
                 .frame(width: 50, height: 50)
             
-            Text("\(Int(weather.temperature)) °C")
+            Text("\(Int(weather.getTemperatureByUnit(unit: store.selectedUnit))) \(String(store.selectedUnit.displayText.prefix(1)))")
         }
         .padding()
         .background(Color(#colorLiteral(red: 0.9133135676, green: 0.9335765243, blue: 0.98070997, alpha: 1)))

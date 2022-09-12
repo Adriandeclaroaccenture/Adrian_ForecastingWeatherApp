@@ -13,7 +13,7 @@ struct ForecastingWeatherApp: App {
         WindowGroup {
             LaunchScreenSplashView()
             //For Observable Object
-                .environmentObject(Store())
+               .environmentObject(Store())
         }
     }
 }
