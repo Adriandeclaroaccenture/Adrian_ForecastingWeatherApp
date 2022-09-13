@@ -62,7 +62,7 @@ struct SettingsView: View {
             
         })
         
-//        .embedInavigationView()
+        .embedInNavigationView()
     }
 }
 //MARK: - Preview

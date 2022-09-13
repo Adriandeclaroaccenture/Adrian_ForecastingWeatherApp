@@ -35,6 +35,7 @@
 		FF970C8228AF645E0041A7B6 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF970C8128AF645E0041A7B6 /* DateExtension.swift */; };
 		FFB6053328CF099F00941F41 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB6053228CF099F00941F41 /* SettingsView.swift */; };
 		FFB6053628CF11F700941F41 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB6053528CF11F700941F41 /* UserDefaults.swift */; };
+		FFD0855728D06B0500903685 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD0855628D06B0500903685 /* NavigationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		FF970C8128AF645E0041A7B6 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		FFB6053228CF099F00941F41 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FFB6053528CF11F700941F41 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		FFD0855628D06B0500903685 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +146,6 @@
 				FF970C6728AF262E0041A7B6 /* WeatherManager.swift */,
 				FF970C6B28AF3F290041A7B6 /* WebServiceAddConnection.swift */,
 				FF970C6D28AF41610041A7B6 /* ConstantsAPI.swift */,
-				FF970C8128AF645E0041A7B6 /* DateExtension.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -182,7 +183,9 @@
 		FFB6053428CF11D500941F41 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FF970C8128AF645E0041A7B6 /* DateExtension.swift */,
 				FFB6053528CF11F700941F41 /* UserDefaults.swift */,
+				FFD0855628D06B0500903685 /* NavigationView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				FFB6053328CF099F00941F41 /* SettingsView.swift in Sources */,
 				FF77E37C28ACD3BD00EF306C /* WebService.swift in Sources */,
 				FF970C8028AF63350041A7B6 /* ImageLoader.swift in Sources */,
+				FFD0855728D06B0500903685 /* NavigationView.swift in Sources */,
 				FF970C7228AF4C800041A7B6 /* WeatherListScreenView.swift in Sources */,
 				FF970C7928AF5C810041A7B6 /* Store.swift in Sources */,
 				FF77E38028ACD57400EF306C /* Weather.swift in Sources */,

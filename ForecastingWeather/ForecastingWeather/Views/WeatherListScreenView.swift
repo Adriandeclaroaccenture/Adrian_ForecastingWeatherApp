@@ -30,10 +30,7 @@ struct WeatherListScreenView: View {
     
 //MARK: - Body
     var body: some View {
-        
-     
-        
-        
+  
         NavigationView {
      
             List {
@@ -71,11 +68,7 @@ struct WeatherListScreenView: View {
                 
                 .navigationTitle("Cities")
             
-            
         }
-        
-        
-        
     }
 }
 //MARK: - Preview
@@ -94,8 +87,17 @@ struct WeatherCell: View {
     let weather: WeatherView
 //MARK: - Body
     var body: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: 15) {
+        ZStack{
+            
+            
+            Image( "bgBackground")
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea()
+            
+            HStack {
+            
+                VStack(alignment: .leading, spacing: 15) {
                 Text(weather.city)
                     .fontWeight(.bold)
                 HStack {
@@ -117,5 +119,6 @@ struct WeatherCell: View {
         .background(Color(#colorLiteral(red: 0.9133135676, green: 0.9335765243, blue: 0.98070997, alpha: 1)))
         .clipShape(RoundedRectangle(cornerRadius: 10, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
 
+        }
     }
 }
