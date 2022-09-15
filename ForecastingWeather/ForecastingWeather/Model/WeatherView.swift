@@ -24,7 +24,7 @@ struct WeatherView {
             return weather.temperature
             
         case .fahrenheit:
-            return weather.temperature
+            return 1.8 * weather.temperature + 32
         }
     }
 

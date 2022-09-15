@@ -79,6 +79,13 @@ struct CurrentWeatherView: View {
                             Text("\((weatherVM.weatherDescription ?? "").uppercased()) \(String(weatherVM.temperature ?? 0.0)) °C")
                                 .font(.callout).fontWeight(.heavy).foregroundColor(.white)
                             Divider()
+                            
+                            Text("Minimun Temperature: \(String(weatherVM.temp_min ?? 0.0)) °C")
+                                .font(.callout)
+                                .foregroundColor(.black)
+                            Text("Maximun Temperature: \(String(weatherVM.temp_max ?? 0.0)) °C")
+                                .font(.callout)
+                                .foregroundColor(.black)
                             Text("Pressure: \(String(weatherVM.pressure ?? 0.0))mbar")
                                 .font(.callout)
                                 .foregroundColor(.black)

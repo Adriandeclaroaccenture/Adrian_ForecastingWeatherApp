@@ -14,6 +14,9 @@ class WeatherViewModel: ObservableObject {
     @Published var temperature: Float?
     @Published var pressure: Float?
     @Published var humidity: Float?
+    @Published var temp_min: Float?
+    @Published var temp_max: Float?
+    
 //    @Published var sunrise: Double?
 //    @Published var sunset: Double?
     @Published var weatherDescription: String?
@@ -32,6 +35,8 @@ class WeatherViewModel: ObservableObject {
                         self.temperature = retrievedWeather.temp
                         self.humidity = retrievedWeather.humidity
                         self.pressure = retrievedWeather.pressure
+                        self.temp_min = retrievedWeather.temp_min
+                        self.temp_max = retrievedWeather.temp_max
 //                        self.sunrise = retrievedWeather.sunrise
 //                        self.sunset = retrievedWeather.sunset
                         self.weatherDescription = retrievedWeather.weatherDescription
