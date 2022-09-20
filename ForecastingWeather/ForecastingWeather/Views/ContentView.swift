@@ -20,46 +20,39 @@ struct ContentView: View {
     var body: some View {
 
         TabView {
-            
+            AboutView()
+                .tabItem() {
+                    
+                    Image(systemName: "person.circle.fill")
+                    Text("About")
+                }
             CurrentWeatherView()
-                .tabItem {
+                .tabItem() {
                     
                     Image(systemName: "magnifyingglass.circle.fill")
                     Text("Search City")
                 }
             
-          WeatherListScreenView()
-                .tabItem {
+            WeatherListScreenView()
+                .tabItem() {
                     Image(systemName: "rectangle.stack.badge.plus")
                     Text("Add City")
                     
                 }
-        }
-        
-//        NavigationView {
-//            VStack {
-//
-//                NavigationLink(destination: CurrentWeatherView(), isActive: self.$isActive ) {
-//
-//                }
-//
-//                NavigationLink(destination: WeatherListScreenView(), isActive: self.$isActive ) {
-//
-//                }
-//
-//                Button("Go to Current Weather") {
-//                    self.isActive = true
-//                }
-//                Button("Add Cities") {
-//                    self.isActive = true
-//                }
-//            }
-//
-//
-//        }
-     
+        } //Tabview
     }
 }
+
+extension UITabBarController {
+    override open func viewDidLoad() {
+        
+        let standardApperance = UITabBarAppearance()
+        
+        standardApperance.backgroundImage = UIImage (named: "tabColor")
+        
+        tabBar.standardAppearance = standardApperance
+    }
+} //extension
 //MARK: - Preview
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

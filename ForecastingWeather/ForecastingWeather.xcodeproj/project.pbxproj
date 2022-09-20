@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FF1BDEF428ADF00E00FCAE93 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1BDEF328ADF00E00FCAE93 /* LocationManager.swift */; };
+		FF3361E328D9948200428D2B /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3361E228D9948200428D2B /* AboutView.swift */; };
 		FF77E36928ACD1D000EF306C /* ForecastingWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF77E36828ACD1D000EF306C /* ForecastingWeatherApp.swift */; };
 		FF77E36B28ACD1D000EF306C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF77E36A28ACD1D000EF306C /* ContentView.swift */; };
 		FF77E36D28ACD1D200EF306C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF77E36C28ACD1D200EF306C /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		FF1BDEF328ADF00E00FCAE93 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		FF3361E228D9948200428D2B /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		FF77E36528ACD1D000EF306C /* ForecastingWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForecastingWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF77E36828ACD1D000EF306C /* ForecastingWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastingWeatherApp.swift; sourceTree = "<group>"; };
 		FF77E36A28ACD1D000EF306C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				FF970C7128AF4C800041A7B6 /* WeatherListScreenView.swift */,
 				FF970C7A28AF5D840041A7B6 /* WeatherStoreView.swift */,
 				FFB6053228CF099F00941F41 /* SettingsView.swift */,
+				FF3361E228D9948200428D2B /* AboutView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				FF77E37E28ACD50500EF306C /* WeatherViewModel.swift in Sources */,
 				FF970C6628AF23240041A7B6 /* LoadingView.swift in Sources */,
 				FF970C7428AF4D250041A7B6 /* AddWeather.swift in Sources */,
+				FF3361E328D9948200428D2B /* AboutView.swift in Sources */,
 				FF77E38228ACDE7F00EF306C /* LaunchScreenSplashView.swift in Sources */,
 				FF970C6A28AF32720041A7B6 /* WeatherList.swift in Sources */,
 				FF970C7628AF4E4A0041A7B6 /* WeatherView.swift in Sources */,
