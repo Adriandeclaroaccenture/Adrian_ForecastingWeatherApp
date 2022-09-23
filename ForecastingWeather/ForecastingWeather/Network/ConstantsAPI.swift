@@ -16,6 +16,7 @@ struct Constants {
         static func weatherByCity(city: String) -> URL? {
             
             return URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(city)&appid=96d28c208664698f6c02c4be0dba3e8f&units=metric")
+//            &units=metric
         }
         
         static func weatherURLAsStringByIcon(icon: String) -> String {

@@ -30,10 +30,7 @@ struct WeatherListScreenView: View {
     
 //MARK: - Body
     var body: some View {
-        
-     
-        
-        
+  
         NavigationView {
      
             List {
@@ -41,9 +38,13 @@ struct WeatherListScreenView: View {
                 ForEach(store.weatherList, id: \.id) { weather in
                     
                     WeatherCell(weather:weather)
-                 
+                        
                     
-                }
+                }   .onDelete(perform: { indexSet in
+                       store.weatherList.remove(atOffsets: indexSet)
+
+                    })
+        
                 
             }.listStyle(PlainListStyle())
             
@@ -53,7 +54,7 @@ struct WeatherListScreenView: View {
                     case .addNewCity:
                         AddCityView().environmentObject(store)
                     case .currentView:
-                        CurrentWeatherView()
+                        SettingsView().environmentObject(store)
                     }
             })
             
@@ -61,7 +62,7 @@ struct WeatherListScreenView: View {
                     activeSheet = .currentView
                 }) {
                     
-                    Image(systemName: "magnifyingglass.circle.fill")
+                    Image(systemName: "thermometer.sun.fill")
                 }, trailing: Button(action: {
                     activeSheet = .addNewCity
                     
@@ -71,11 +72,7 @@ struct WeatherListScreenView: View {
                 
                 .navigationTitle("Cities")
             
-            
         }
-        
-        
-        
     }
 }
 //MARK: - Preview
@@ -85,13 +82,26 @@ struct WeatherListScreenView_Previews: PreviewProvider {
     }
 }
 
+
+//MARK: - Struct WeatherCell
 struct WeatherCell: View {
+//MARK: - Property
     
+    @EnvironmentObject var store: Store
     let weather: WeatherView
-    
+//MARK: - Body
     var body: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: 15) {
+//        ZStack{
+            
+            
+////            Image( "bgBackground")
+//                .resizable()
+//                .scaledToFill()
+//                .ignoresSafeArea()
+            
+            HStack {
+            
+                VStack(alignment: .leading, spacing: 15) {
                 Text(weather.city)
                     .fontWeight(.bold)
                 HStack {
@@ -107,11 +117,12 @@ struct WeatherCell: View {
             URLImage(url: Constants.Urls.weatherURLAsStringByIcon(icon: weather.icon))
                 .frame(width: 50, height: 50)
             
-            Text("\(Int(weather.temperature)) °C")
+            Text("\(Int(weather.getTemperatureByUnit(unit: store.selectedUnit))) \(String(store.selectedUnit.displayText.prefix(1)))")
         }
         .padding()
         .background(Color(#colorLiteral(red: 0.9133135676, green: 0.9335765243, blue: 0.98070997, alpha: 1)))
         .clipShape(RoundedRectangle(cornerRadius: 10, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
 
+//        }
     }
 }
