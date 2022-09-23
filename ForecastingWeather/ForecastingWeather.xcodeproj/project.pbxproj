@@ -37,6 +37,7 @@
 		FFB6053328CF099F00941F41 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB6053228CF099F00941F41 /* SettingsView.swift */; };
 		FFB6053628CF11F700941F41 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB6053528CF11F700941F41 /* UserDefaults.swift */; };
 		FFD0855728D06B0500903685 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD0855628D06B0500903685 /* NavigationView.swift */; };
+		FFEFB9F728DD5780000295CB /* TitleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEFB9F628DD5780000295CB /* TitleModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		FFB6053228CF099F00941F41 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FFB6053528CF11F700941F41 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		FFD0855628D06B0500903685 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		FFEFB9F628DD5780000295CB /* TitleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				FF77E37728ACD34500EF306C /* Network */,
 				FF970C7728AF5C340041A7B6 /* Store */,
 				FFB6053428CF11D500941F41 /* Extensions */,
+				FFEFB9F528DD5766000295CB /* Modifier */,
 				FF970C7E28AF631B0041A7B6 /* Icon */,
 				FF77E36C28ACD1D200EF306C /* Assets.xcassets */,
 				FF77E36E28ACD1D200EF306C /* Preview Content */,
@@ -193,6 +196,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		FFEFB9F528DD5766000295CB /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				FFEFB9F628DD5780000295CB /* TitleModifier.swift */,
+			);
+			path = Modifier;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -270,6 +281,7 @@
 				FFB6053628CF11F700941F41 /* UserDefaults.swift in Sources */,
 				FF77E37E28ACD50500EF306C /* WeatherViewModel.swift in Sources */,
 				FF970C6628AF23240041A7B6 /* LoadingView.swift in Sources */,
+				FFEFB9F728DD5780000295CB /* TitleModifier.swift in Sources */,
 				FF970C7428AF4D250041A7B6 /* AddWeather.swift in Sources */,
 				FF3361E328D9948200428D2B /* AboutView.swift in Sources */,
 				FF77E38228ACDE7F00EF306C /* LaunchScreenSplashView.swift in Sources */,
@@ -437,7 +449,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -467,7 +479,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

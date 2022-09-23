@@ -22,7 +22,7 @@ struct ContentView: View {
         TabView {
             AboutView()
                 .tabItem() {
-                    
+
                     Image(systemName: "person.circle.fill")
                     Text("About")
                 }
