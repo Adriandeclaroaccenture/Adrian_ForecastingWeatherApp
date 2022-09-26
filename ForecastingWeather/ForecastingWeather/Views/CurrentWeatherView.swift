@@ -27,8 +27,6 @@ struct CurrentWeatherView: View {
               
                 ZStack {
                     
-                    
-                    
                     Image( "bgBackground")
                         .resizable()
                         .scaledToFill()
@@ -111,7 +109,18 @@ struct CurrentWeatherView: View {
                         Spacer()
                         
                         //Current Location
-                        CurrentLocationView()
+                        if let location = locationManager.location {
+                            Text("Your Coordinates are: \(location.longitude), \(location.latitude)")
+                        } else {
+                            if locationManager.isLoading {
+                                LoadingView()
+                            } else {
+                                CurrentLocationView()
+                                    .environmentObject(locationManager)
+                            }
+                        
+                        }//if let statement
+                      
                         
                     }
                     

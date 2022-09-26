@@ -11,9 +11,8 @@ import SwiftUI
 
 struct ContentView: View {
 //MARK: - Properties
-//    @EnvironmentObject var store: Store
-//    @State private var isActive: Bool = false
-    
+
+@StateObject var locationManager = LocationManager()
     
     
 //MARK: - Body
