@@ -14,9 +14,12 @@ struct CurrentWeatherView: View {
 //MARK: - Properties
     @ObservedObject private var locationManager = LocationManager()
     @StateObject var weatherVM = WeatherViewModel()
+    @State var weather: ResponseBody?
     @State private var shouldShowErrorBox = false
     @State private var city: String = ""
     @State private var isOn = false
+    
+    var weatherManager = WeatherManager()
 //MARK: - Body
     
     var body: some View {
@@ -26,8 +29,6 @@ struct CurrentWeatherView: View {
             VStack {
               
                 ZStack {
-                    
-                    
                     
                     Image( "bgBackground")
                         .resizable()
@@ -111,7 +112,30 @@ struct CurrentWeatherView: View {
                         Spacer()
                         
                         //Current Location
-                        CurrentLocationView()
+                        if let location = locationManager.location {
+                            if let weather = weather {
+                                Text("Fetched weather data")
+                            } else {
+                                LoadingView()
+                                    .task {
+                                        do {
+                                            weather = try await weatherManager.getCurrentWeather(latitude: location.latitude, longtitude: location.longitude)
+                                        } catch {
+                                            print ("Error getting location \(error)")
+                                        }
+                                    }
+                            }
+                        } else {
+                            if locationManager.isLoading {
+                                LoadingView()
+                                    
+                            } else {
+                                CurrentLocationView()
+                                    .environmentObject(locationManager)
+                            }
+                        
+                        }//if let statement
+                      
                         
                     }
                     
