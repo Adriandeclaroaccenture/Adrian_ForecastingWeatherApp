@@ -12,7 +12,6 @@ import Foundation
 class Store: ObservableObject {
     @Published var selectedUnit: TemperatureUnit = .celsius
     @Published var weatherList:[WeatherView] = [WeatherView]()
-    
     init() {
         
         selectedUnit = UserDefaults.standard.unit

@@ -38,14 +38,12 @@ struct WeatherListScreenView: View {
                 ForEach(store.weatherList, id: \.id) { weather in
                     
                     WeatherCell(weather:weather)
-                        
-                    
+                      
                 }   .onDelete(perform: { indexSet in
                        store.weatherList.remove(atOffsets: indexSet)
 
                     })
         
-                
             }.listStyle(PlainListStyle())
             
                 .sheet(item: $activeSheet, content: { (item) in
@@ -69,9 +67,7 @@ struct WeatherListScreenView: View {
                 }, label: {
                     Image(systemName: "plus.app")
                 }))
-                
                 .navigationTitle("Cities")
-            
         }
     }
 }
@@ -81,8 +77,6 @@ struct WeatherListScreenView_Previews: PreviewProvider {
         WeatherListScreenView().environmentObject(Store())
     }
 }
-
-
 //MARK: - Struct WeatherCell
 struct WeatherCell: View {
 //MARK: - Property
@@ -91,14 +85,6 @@ struct WeatherCell: View {
     let weather: WeatherView
 //MARK: - Body
     var body: some View {
-//        ZStack{
-            
-            
-////            Image( "bgBackground")
-//                .resizable()
-//                .scaledToFill()
-//                .ignoresSafeArea()
-            
             HStack {
             
                 VStack(alignment: .leading, spacing: 15) {
@@ -122,7 +108,5 @@ struct WeatherCell: View {
         .padding()
         .background(Color(#colorLiteral(red: 0.9133135676, green: 0.9335765243, blue: 0.98070997, alpha: 1)))
         .clipShape(RoundedRectangle(cornerRadius: 10, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
-
-//        }
     }
 }
