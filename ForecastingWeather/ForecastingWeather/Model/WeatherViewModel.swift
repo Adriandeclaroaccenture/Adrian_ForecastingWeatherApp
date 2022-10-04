@@ -7,7 +7,8 @@
 // Fetch Data from the API to Main View
 
 import Foundation
-
+import CoreLocation
+import SwiftUI
 
 class WeatherViewModel: ObservableObject {
     private let weatherService: WeatherService = WeatherService()
