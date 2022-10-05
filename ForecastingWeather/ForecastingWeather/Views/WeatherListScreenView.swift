@@ -27,7 +27,6 @@ struct WeatherListScreenView: View {
     @EnvironmentObject var store: Store
     @State private var activeSheet: Sheets?
     
-    
 //MARK: - Body
     var body: some View {
   
@@ -104,6 +103,13 @@ struct WeatherCell: View {
                 .frame(width: 50, height: 50)
             
             Text("\(Int(weather.getTemperatureByUnit(unit: store.selectedUnit))) \(String(store.selectedUnit.displayText.prefix(1)))")
+//MARK: - 5 Days
+                HStack {
+                    VStack {
+                        
+                        
+                    }//Vstack
+                }//Hstack
         }
         .padding()
         .background(Color(#colorLiteral(red: 0.9133135676, green: 0.9335765243, blue: 0.98070997, alpha: 1)))
