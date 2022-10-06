@@ -13,7 +13,7 @@ import Foundation
 struct WeatherView {
 
     let weather: Weather
-
+//    let myWeather: MyWeather
     let id = UUID()
     
     func getTemperatureByUnit(unit: TemperatureUnit) -> Double {
@@ -52,5 +52,25 @@ struct WeatherView {
 
         return weather.sunset
     }
+    
+//    var city0: String {
+//        return myWeather.city
+//    }
+//
+//    var temperature0: Double {
+//        return myWeather.temperature0
+//    }
+//
+//    var icon0: String {
+//        return myWeather.icon0
+//    }
+//
+//    var description0: String {
+//        return myWeather.description0
+//    }
+//
+//    var date0: Date {
+//        return myWeather.date0
+//    }
 
 }
