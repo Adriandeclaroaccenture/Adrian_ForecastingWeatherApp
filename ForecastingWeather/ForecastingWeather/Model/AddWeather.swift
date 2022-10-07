@@ -22,6 +22,10 @@ class AddWeatherViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     completion(WeatherView(weather: weather))
                 }
+//            case .success(let weather, let myWeather):
+//                DispatchQueue.main.async {
+//                    completion(WeatherView(weather: weather, myWeather: myWeather))
+//                }
 
             case .failure(let error):
                 print(error)

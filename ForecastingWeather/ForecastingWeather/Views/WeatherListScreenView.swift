@@ -27,25 +27,25 @@ struct WeatherListScreenView: View {
     @EnvironmentObject var store: Store
     @State private var activeSheet: Sheets?
     
-    
 //MARK: - Body
     var body: some View {
   
         NavigationView {
      
             List {
+                //weather
                 
-                ForEach(store.weatherList, id: \.id) { weather in
-                    
-                    WeatherCell(weather:weather)
-                        
-                    
-                }   .onDelete(perform: { indexSet in
-                       store.weatherList.remove(atOffsets: indexSet)
-
-                    })
+//                ForEach(store.weatherList, id: \.id) {  forecastWeather in
+//
+                //(weather: weather)
+//                    WeatherCell (forecast: forecastWeather)
+//
+//                }
+//                .onDelete(perform: { indexSet in
+//                       store.weatherList.remove(atOffsets: indexSet)
+//
+//                    })
         
-                
             }.listStyle(PlainListStyle())
             
                 .sheet(item: $activeSheet, content: { (item) in
@@ -69,9 +69,7 @@ struct WeatherListScreenView: View {
                 }, label: {
                     Image(systemName: "plus.app")
                 }))
-                
                 .navigationTitle("Cities")
-            
         }
     }
 }
@@ -81,48 +79,51 @@ struct WeatherListScreenView_Previews: PreviewProvider {
         WeatherListScreenView().environmentObject(Store())
     }
 }
-
-
 //MARK: - Struct WeatherCell
 struct WeatherCell: View {
 //MARK: - Property
     
     @EnvironmentObject var store: Store
     let weather: WeatherView
+    let forecast: MyWeather
 //MARK: - Body
     var body: some View {
-//        ZStack{
-            
-            
-////            Image( "bgBackground")
-//                .resizable()
-//                .scaledToFill()
-//                .ignoresSafeArea()
-            
-            HStack {
-            
-                VStack(alignment: .leading, spacing: 15) {
-                Text(weather.city)
-                    .fontWeight(.bold)
+//            HStack {
+//            
+//                VStack(alignment: .leading, spacing: 15) {
+//                Text(weather.city)
+//                    .fontWeight(.bold)
+//                HStack {
+//                    Image(systemName: "sunrise")
+//                    Text("\(weather.sunrise.formatAsString())")
+//                }
+//                HStack {
+//                    Image(systemName: "sunset")
+//                    Text("\(weather.sunset.formatAsString())")
+//                }
+//            }
+//            Spacer()
+//            URLImage(url: Constants.Urls.weatherURLAsStringByIcon(icon: weather.icon))
+//                .frame(width: 50, height: 50)
+//
+//            Text("\(Int(weather.getTemperatureByUnit(unit: store.selectedUnit))) \(String(store.selectedUnit.displayText.prefix(1)))")
+//MARK: - 5 Days
                 HStack {
-                    Image(systemName: "sunrise")
-                    Text("\(weather.sunrise.formatAsString())")
-                }
-                HStack {
-                    Image(systemName: "sunset")
-                    Text("\(weather.sunset.formatAsString())")
-                }
-            }
-            Spacer()
-            URLImage(url: Constants.Urls.weatherURLAsStringByIcon(icon: weather.icon))
-                .frame(width: 50, height: 50)
-            
-            Text("\(Int(weather.getTemperatureByUnit(unit: store.selectedUnit))) \(String(store.selectedUnit.displayText.prefix(1)))")
-        }
+                    VStack {
+                        DailyRow(logo: Constants.Urls.weatherURLAsStringByIcon(icon: weather.icon), day: "Today:", min: "Min: %.0f", max: "Max: %.0f")
+                        Divider()
+                        DailyRow(logo: Constants.Urls.weatherURLAsStringByIcon(icon: weather.icon), day: forecast.date1.formatAsString(), min: "Min: 0.%f", max: "Max: Max: 0.%f")
+                        Divider()
+                        DailyRow(logo: Constants.Urls.weatherURLAsStringByIcon(icon: weather.icon), day: forecast.date2.formatAsString(), min: "Min: 0.%f", max: "Max: Max: 0.%f")
+                        Divider()
+                        DailyRow(logo: Constants.Urls.weatherURLAsStringByIcon(icon: weather.icon), day: forecast.date3.formatAsString(), min: "Min: 0.%f", max: "Max: Max: 0.%f")
+                        Divider()
+                        DailyRow(logo: Constants.Urls.weatherURLAsStringByIcon(icon: weather.icon), day: forecast.date4.formatAsString(), min: "Min: 0.%f", max: "Max: Max: 0.%f")
+                    }//Vstack
+                }//Hstack
+//        }//Hstack
         .padding()
         .background(Color(#colorLiteral(red: 0.9133135676, green: 0.9335765243, blue: 0.98070997, alpha: 1)))
         .clipShape(RoundedRectangle(cornerRadius: 10, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/))
-
-//        }
     }
 }

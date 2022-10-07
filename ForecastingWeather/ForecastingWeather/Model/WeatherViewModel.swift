@@ -7,7 +7,8 @@
 // Fetch Data from the API to Main View
 
 import Foundation
-
+import CoreLocation
+import SwiftUI
 
 class WeatherViewModel: ObservableObject {
     private let weatherService: WeatherService = WeatherService()
@@ -16,9 +17,6 @@ class WeatherViewModel: ObservableObject {
     @Published var humidity: Float?
     @Published var temp_min: Float?
     @Published var temp_max: Float?
-    
-//    @Published var sunrise: Double?
-//    @Published var sunset: Double?
     @Published var weatherDescription: String?
     @Published var backgroundImageUrl: String = ""
     
@@ -37,8 +35,6 @@ class WeatherViewModel: ObservableObject {
                         self.pressure = retrievedWeather.pressure
                         self.temp_min = retrievedWeather.temp_min
                         self.temp_max = retrievedWeather.temp_max
-//                        self.sunrise = retrievedWeather.sunrise
-//                        self.sunset = retrievedWeather.sunset
                         self.weatherDescription = retrievedWeather.weatherDescription
                     }
                 }
