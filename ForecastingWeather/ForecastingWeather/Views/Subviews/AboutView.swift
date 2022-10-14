@@ -47,7 +47,7 @@ struct AboutViewExtract: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             RowAppInfoView(ItemOne: "Application", ItemTwo: "Forecasting Weather")
-            RowAppInfoView(ItemOne: "Compatibility", ItemTwo: "iPhone")
+            RowAppInfoView(ItemOne: "Compatibility", ItemTwo: "15.5v")
             RowAppInfoView(ItemOne: "Developer", ItemTwo: "Adrian")
             RowAppInfoView(ItemOne: "Language", ItemTwo: "SwiftUI")
             RowAppInfoView(ItemOne: "Version", ItemTwo: "1.0")
