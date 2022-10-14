@@ -10,14 +10,16 @@
 import Foundation
 
 class Store: ObservableObject {
-    @Published var selectedUnit: TemperatureUnit = .celsius
-    @Published var weatherList:[WeatherView] = [WeatherView]()
+    
+    @Published var tempUnit: TemperatureUnit = .celsius
+    @Published var weatherVM: [WeatherViewModel] = [WeatherViewModel]()
+    
     init() {
-        
-        selectedUnit = UserDefaults.standard.unit
+        tempUnit = UserDefaults.standard.unit
     }
     
-    func addWeather(_ weather: WeatherView) {
-        weatherList.append(weather)
+    func addWeather(_ weather: WeatherViewModel){
+        weatherVM.append(weather)
     }
+    
 }

@@ -9,29 +9,32 @@
 
 import Foundation
 
-
-extension Date {
-    func formatAsString() -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "EEEE, MMMM d"
-        return formatter.string(from: self)
-    }
+class DateTime {
     
-    func formatAsString1() -> String {
+    static let defaultDateFormatter: DateFormatter = {
+        
         let formatter = DateFormatter()
-        formatter.dateFormat = "E"
-        return formatter.string(from: self)
-    }
+        formatter.dateStyle = .full
+        return formatter
+    }()
     
-    func formatAsString2() -> String {
+    static let dayFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "EEE, MMM d"
-        return formatter.string(from: self)
-    }
-//    func formatAsString() -> String {
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "hh:mm a"
-//        return formatter.string(from: self)
-//    }
-
+        formatter.dateFormat = "EEE"
+        return formatter
+    }()
+    
+    static let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d"
+        return formatter
+    }()
+    
+    static let timeFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh a"
+        return formatter
+    }()
+    
 }
+

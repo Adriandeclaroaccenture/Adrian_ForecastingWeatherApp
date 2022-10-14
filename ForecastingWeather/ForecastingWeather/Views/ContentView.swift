@@ -11,32 +11,22 @@ import SwiftUI
 
 struct ContentView: View {
 //MARK: - Properties
-
-@StateObject var locationManager = LocationManager()
-    
-    
 //MARK: - Body
     var body: some View {
-
         TabView {
             AboutView()
                 .tabItem() {
 
                     Image(systemName: "person.circle.fill")
                     Text("About")
+                        .foregroundColor(Color("textColor"))
                 }
             CurrentWeatherView()
                 .tabItem() {
                     
                     Image(systemName: "magnifyingglass.circle.fill")
-                    Text("Search City")
-                }
-            
-            WeatherListScreenView()
-                .tabItem() {
-                    Image(systemName: "rectangle.stack.badge.plus")
-                    Text("Add City")
-                    
+                    Text("Weather")
+                        .foregroundColor(Color("textColor"))
                 }
         } //Tabview
     }
@@ -52,6 +42,9 @@ extension UITabBarController {
         tabBar.standardAppearance = standardApperance
     }
 } //extension
+ 
+
+
 //MARK: - Preview
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
