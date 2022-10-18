@@ -57,7 +57,7 @@ struct AddLocationView: View {
                         label: { LocationList(locationCityName: location)
                         } .listRowBackground(Color.clear)
                     }
-                        //ForEach
+                        //ForEach End
                     }.listStyle(PlainListStyle()).padding(.horizontal)
                 }//Vstack
                 .padding(.horizontal)
