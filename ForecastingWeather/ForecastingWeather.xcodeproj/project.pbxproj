@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF2F2C0F28FFDCA100DB2003 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2F2C0E28FFDCA100DB2003 /* PersistenceController.swift */; };
 		FF3361E328D9948200428D2B /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3361E228D9948200428D2B /* AboutView.swift */; };
 		FF5FBA3528F6643B003AF15B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5FBA3428F6643B003AF15B /* Constants.swift */; };
 		FF5FBA3728F666A7003AF15B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5FBA3628F666A7003AF15B /* API.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF2F2C0E28FFDCA100DB2003 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		FF3361E228D9948200428D2B /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		FF5FBA3428F6643B003AF15B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FF5FBA3628F666A7003AF15B /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				FF970C7828AF5C810041A7B6 /* Store.swift */,
+				FF2F2C0E28FFDCA100DB2003 /* PersistenceController.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				FF970C6228AF110D0041A7B6 /* LocationList.swift in Sources */,
 				FF970C7B28AF5D840041A7B6 /* WeatherDays.swift in Sources */,
 				FFB6053628CF11F700941F41 /* UserDefaults.swift in Sources */,
+				FF2F2C0F28FFDCA100DB2003 /* PersistenceController.swift in Sources */,
 				FF77E37E28ACD50500EF306C /* WeatherViewModel.swift in Sources */,
 				FF970C6628AF23240041A7B6 /* TopNavigationBar.swift in Sources */,
 				FFEFB9F728DD5780000295CB /* TitleModifier.swift in Sources */,
