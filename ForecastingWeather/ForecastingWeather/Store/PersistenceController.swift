@@ -19,4 +19,20 @@ struct PersistenceController {
             }//if let
         }//load persistence
     }//init
+//MARK: - Save Function
+    func save(completion: @escaping (Error?) -> () = {_ in } ) {
+        let context = container.viewContext
+        if context.hasChanges {
+            do {
+                try context.save()
+                completion(nil)
+            } catch  {
+                completion(error)
+            }
+        }//statement
+    }//func save
+//MARK: - Delete Function
+    func delete(_ object: NSManagedObject, completion: @escaping (Error?) -> () = {_ in }) {
+        
+    }//func delete
 } //struct

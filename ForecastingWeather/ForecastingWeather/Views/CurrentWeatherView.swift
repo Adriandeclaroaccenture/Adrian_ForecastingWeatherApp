@@ -26,7 +26,7 @@ struct CurrentWeatherView: View {
                         .offset(x: 0, y: -20)
                     CurrentWeather()
                         .offset(x: 0, y: -20)
-                    ScrollView (.vertical) {
+                    ScrollView (.horizontal) {
                         ForEach((1...5), id:\.self) { day in
                             WeatherDays(days: day)
                         }//ForEach
@@ -56,13 +56,13 @@ struct CurrentWeatherView: View {
                             .resizable()
                             .scaledToFit()
                             .background(Circle().fill(.clear))
-                            .frame(width: 48, height: 48, alignment: .bottomTrailing)
+                            .frame(width: 48, height: 48, alignment: .topLeading)
                             .accentColor(Color("circleColor"))
                     }//Zstack
-                    .padding(.bottom, 30)
-                    .padding(.trailing, 30)
+//                    .padding(.bottom, 50)
+//                    .padding(.top, 0)
                 }//NavigationLink
-                , alignment: .bottom
+                , alignment: .topTrailing
             )//Overlay
             .preferredColorScheme(isDarkMode ? .dark : .light)
         }.navigationBarHidden(true)  //NavigationView

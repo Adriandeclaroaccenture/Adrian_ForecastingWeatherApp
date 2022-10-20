@@ -21,7 +21,6 @@ struct CurrentLocationView: View {
                 .fontWeight(.semibold)
             Text("\(weatherVM.currentDate)")
         }//Vstack
-//            .foregroundColor(Color("textcolor"))
             .preferredColorScheme(isDarkMode ? .dark : .light)
     }
 }
