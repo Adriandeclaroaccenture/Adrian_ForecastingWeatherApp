@@ -150,7 +150,6 @@
 				FFEFB9F528DD5766000295CB /* Modifier */,
 				FF970C7E28AF631B0041A7B6 /* Icon */,
 				FF5FBA3328F6641A003AF15B /* Constants */,
-				FFE58BAD290120BD00C6D642 /* Extensions */,
 				FF77E36C28ACD1D200EF306C /* Assets.xcassets */,
 				FF77E36E28ACD1D200EF306C /* Preview Content */,
 				FF8389C728FE9E7700C322D5 /* WeatherData.xcdatamodeld */,
@@ -222,17 +221,9 @@
 				FF970C8128AF645E0041A7B6 /* DateExtension.swift */,
 				FFB6053528CF11F700941F41 /* UserDefaults.swift */,
 				FFD0855628D06B0500903685 /* NavigationView.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		FFE58BAD290120BD00C6D642 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
 				FFE58BAE2901214100C6D642 /* FileManager+Extension.swift */,
 			);
-			name = Extensions;
-			path = Constants/Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		FFEFB9F528DD5766000295CB /* Modifier */ = {
