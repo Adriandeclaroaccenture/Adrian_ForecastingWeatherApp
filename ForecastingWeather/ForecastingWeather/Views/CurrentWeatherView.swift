@@ -26,7 +26,8 @@ struct CurrentWeatherView: View {
                         .offset(x: 0, y: -20)
                     CurrentWeather()
                         .offset(x: 0, y: -20)
-                    ScrollView (.horizontal) {
+                    ScrollView (.vertical) {
+                        Text("5 Days Forecast")
                         ForEach((1...5), id:\.self) { day in
                             WeatherDays(days: day)
                         }//ForEach

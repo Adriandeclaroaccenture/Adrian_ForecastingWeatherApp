@@ -27,11 +27,11 @@ class Store: ObservableObject {
         weatherVM.append(weather)
 //        saveWeather()
     }
-//    func updateWeather(_ weather: WeatherViewModel) {
-//        guard let index = WeatherViewModel.firstIndex(where: {$0.id == WeatherViewModel.id}) else { return }
-//        weatherVM[index] = weather
+    func updateWeather(_ weather: WeatherViewModel) {
+        guard let index = weatherVM.firstIndex(where: {$0.id == weather.id}) else { return }
+        weatherVM[index] = weather
 //        saveWeather()
-//    }
+    }
     func deleteWeather(at weather: IndexSet) {
         weatherVM.remove(atOffsets: weather)
 //        saveWeather()

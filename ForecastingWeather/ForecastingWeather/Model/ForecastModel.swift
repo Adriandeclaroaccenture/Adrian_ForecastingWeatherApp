@@ -11,7 +11,7 @@
 //import CoreLocation
 //import SwiftUI
 //
-//final class ForecastModel: ObservedObject {
+//struct ForecastModel: Identifiable,Codable {
 ////MARK: - Properties
 //    var id = UUID()
 //    @EnvironmentObject var store: Store
