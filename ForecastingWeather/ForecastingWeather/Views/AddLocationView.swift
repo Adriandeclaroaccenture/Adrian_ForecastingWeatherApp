@@ -15,6 +15,7 @@ struct AddLocationView: View {
     @State var currentCity = Constants.CityLocation.city
     @State private var locationList: [String] = []
     @AppStorage("isDarkMode") private var isDarkMode = false
+    @EnvironmentObject var store: Store
     @Environment(\.presentationMode) var presentationMode
 //MARK: - Body
     var body: some View {
@@ -57,7 +58,8 @@ struct AddLocationView: View {
                         label: { LocationList(locationCityName: location)
                         } .listRowBackground(Color.clear)
                     }
-                        //ForEach
+                        .onDelete(perform: store.deleteWeather) //delete add city
+                        //ForEach End
                     }.listStyle(PlainListStyle()).padding(.horizontal)
                 }//Vstack
                 .padding(.horizontal)

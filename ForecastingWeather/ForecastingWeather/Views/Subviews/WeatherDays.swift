@@ -37,8 +37,8 @@ struct WeatherDays: View {
             weatherVM.getWeatherIconFor(icon: weatherVM.weatherDayIcons[days])
                 .resizable()
                 .scaledToFit()
-                .frame(width: 60, height: 60, alignment: .trailing)
-            Spacer().frame(width: 70)
+                .frame(width: 70, height: 70, alignment: .trailing)
+            Spacer().frame(width: 80)
         }//Hstack
     }
 }

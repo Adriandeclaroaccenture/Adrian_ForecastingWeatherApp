@@ -10,18 +10,20 @@ import Foundation
 import CoreLocation
 import SwiftUI
 
-final class WeatherViewModel: ObservableObject {
+class WeatherViewModel: ObservableObject {
+//struct WeatherViewModel: Identifiable, (Optional: <ObservableObject()>) {
 //MARK: - Properties
-    
-    let id = UUID()
+    var id = UUID()
     @EnvironmentObject var store: Store
+//    @State private var weather = WeatherResponse.empty()
+//    @State private var city = Constants.CityLocation.city {
     @Published var weather = WeatherResponse.empty()
     @Published var city = Constants.CityLocation.city {
         didSet {
             getLocation()
         }
     }
-//MARK: - Geo Location
+//MARK: - Geo Location / Current Location
 
     init() {
         getLocation()
@@ -213,11 +215,4 @@ final class WeatherViewModel: ObservableObject {
             return Image("sun")
         }
     }
-
-
-
-
-
-
-
 }//End

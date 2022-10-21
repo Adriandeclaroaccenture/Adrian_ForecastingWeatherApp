@@ -88,6 +88,130 @@ struct WeatherResponse: Codable {
     }
 }
 
+struct WeatherViews: Decodable {
+    var weathers: WeatherResponse
+//    var store: Store
+    var id: UUID {
+        UUID()
+    }
+    //MARK: - Current Weather
+
+        var currentLocation: String {
+            return weathers.city.name
+        }
+        var currentCountry: String {
+            return weathers.city.country
+        }
+        var currentDate: String {
+            return DateTime.defaultDateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval((weathers.list.first?.date)!)))
+        }
+        var weatherIcons: String? {
+            return weatherDayIcons.first
+        }
+        var currentTemp: String? {
+            return getTempByUnit(unit: .celsius)[0]
+        }
+        var currentCondition: String? {
+            return weeklyConditions.first
+        }
+        var currentHumidity: Int {
+            return weathers.list.first?.main.humidity ?? 0
+        }
+        var currentWind: String {
+            return roundedOf(weathers.list.first?.wind.speed ?? 0.0)
+        }
+        var currentRain: String {
+            return toString(100*(weathers.list.first?.pop ?? 0.0))
+        } 
+    //MARK: - Weekly
+        var weeklyDays: [String] {
+            return [
+                DateTime.dayFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(weathers.list[0].date))),
+                DateTime.dayFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(weathers.list[7].date))),
+                DateTime.dayFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(weathers.list[15].date))),
+                DateTime.dayFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(weathers.list[23].date))),
+                DateTime.dayFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(weathers.list[31].date))),
+                DateTime.dayFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(weathers.list[39].date))),
+                
+            ]
+        }
+        
+    //MARK: - Weather Icons
+        var weatherDayIcons: [String] {
+            return [
+                weathers.list[0].weather.first?.icon ?? "",
+                weathers.list[7].weather.first?.icon ?? "",
+                weathers.list[15].weather.first?.icon ?? "",
+                weathers.list[23].weather.first?.icon ?? "",
+                weathers.list[31].weather.first?.icon ?? "",
+                weathers.list[39].weather.first?.icon ?? "",
+                
+            ]
+            
+        }
+        
+    //MARK: - Dates
+
+        var dailyDates:[String] {
+            return [
+                DateTime.dateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(weathers.list[0].date))),
+                DateTime.dateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(weathers.list[7].date))),
+                DateTime.dateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(weathers.list[15].date))),
+                DateTime.dateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(weathers.list[23].date))),
+                DateTime.dateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(weathers.list[31].date))),
+                DateTime.dateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(weathers.list[39].date))),
+            ]
+            
+        }
+        
+    //MARK: - Temperature
+        func getTempByUnit(unit: TemperatureUnit) -> [String] {
+            switch unit {
+            case .celsius:
+                return [
+                    roundedOf(weathers.list[0].main.temp),
+                    roundedOf(weathers.list[7].main.temp),
+                    roundedOf(weathers.list[15].main.temp),
+                    roundedOf(weathers.list[23].main.temp),
+                    roundedOf(weathers.list[31].main.temp),
+                    roundedOf(weathers.list[39].main.temp),
+                ]
+            case .fahrenheit:
+                return [
+                    roundedOf(1.8 * (weathers.list[0].main.temp) + 32),
+                    roundedOf(1.8 * (weathers.list[7].main.temp) + 32),
+                    roundedOf(1.8 * (weathers.list[15].main.temp) + 32),
+                    roundedOf(1.8 * (weathers.list[23].main.temp) + 32),
+                    roundedOf(1.8 * (weathers.list[31].main.temp) + 32),
+                    roundedOf(1.8 * (weathers.list[39].main.temp) + 32),
+                ]
+            }
+        }
+        
+    //MARK: - Weekly Conditions
+        var weeklyConditions: [String] {
+            return [
+                weathers.list[0].weather.first?.description ?? "Sunny",
+                weathers.list[7].weather.first?.description ?? "Sunny",
+                weathers.list[15].weather.first?.description ?? "Sunny",
+                weathers.list[23].weather.first?.description ?? "Sunny",
+                weathers.list[31].weather.first?.description ?? "Sunny",
+                weathers.list[39].weather.first?.description ?? "Sunny",
+            ]
+            
+        }
+        
+    //MARK: - Functions
+        func toString(_ double: Double) -> String {
+            return String(format: "%1.f", double)
+        }
+        func roundedOf(_ roundOf: Double) -> String {
+            return String(format: "%1.f", roundOf)
+        }
+       
+        
+}
+
 
 
 

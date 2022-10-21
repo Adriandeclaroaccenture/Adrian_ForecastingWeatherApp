@@ -7,7 +7,7 @@
 //Test Github
 
 import SwiftUI
-
+import CoreLocation
 
 struct ContentView: View {
 //MARK: - Properties
