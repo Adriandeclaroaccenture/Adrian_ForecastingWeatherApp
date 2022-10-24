@@ -38,7 +38,6 @@
 		FFB6053628CF11F700941F41 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB6053528CF11F700941F41 /* UserDefaults.swift */; };
 		FFD0855728D06B0500903685 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD0855628D06B0500903685 /* NavigationView.swift */; };
 		FFE58BAF2901214100C6D642 /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE58BAE2901214100C6D642 /* FileManager+Extension.swift */; };
-		FFE58BB1290142C800C6D642 /* ForecastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE58BB0290142C800C6D642 /* ForecastModel.swift */; };
 		FFEFB9F728DD5780000295CB /* TitleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEFB9F628DD5780000295CB /* TitleModifier.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,7 +74,6 @@
 		FFB6053528CF11F700941F41 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		FFD0855628D06B0500903685 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		FFE58BAE2901214100C6D642 /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
-		FFE58BB0290142C800C6D642 /* ForecastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastModel.swift; sourceTree = "<group>"; };
 		FFEFB9F628DD5780000295CB /* TitleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,7 +190,6 @@
 				FF77E37F28ACD57400EF306C /* Weather.swift */,
 				FF5FBA3828F66FD8003AF15B /* AddLocation.swift */,
 				FF5FBA3A28F671F4003AF15B /* Settings.swift */,
-				FFE58BB0290142C800C6D642 /* ForecastModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -324,7 +321,6 @@
 				FF970C7028AF49C60041A7B6 /* AddLocationView.swift in Sources */,
 				FFB6053328CF099F00941F41 /* SettingsView.swift in Sources */,
 				FF970C8028AF63350041A7B6 /* ImageLoader.swift in Sources */,
-				FFE58BB1290142C800C6D642 /* ForecastModel.swift in Sources */,
 				FFD0855728D06B0500903685 /* NavigationView.swift in Sources */,
 				FF970C7228AF4C800041A7B6 /* CurrentWeather.swift in Sources */,
 				FF5FBA3F28F67237003AF15B /* WeatherPanel.swift in Sources */,

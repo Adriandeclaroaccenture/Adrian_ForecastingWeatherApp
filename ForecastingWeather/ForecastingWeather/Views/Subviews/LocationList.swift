@@ -13,6 +13,7 @@ struct LocationList: View {
 //MARK: - Property
     @EnvironmentObject var store: Store
     @StateObject var weatherVM = WeatherViewModel()
+//    @State private var weatherVM: WeatherViews
     @AppStorage ("isDarkMode") private var isDarkMode = false
     
     let locationCityName: String

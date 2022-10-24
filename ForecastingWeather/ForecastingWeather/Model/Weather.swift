@@ -88,12 +88,14 @@ struct WeatherResponse: Codable {
     }
 }
 
-struct WeatherViews: Decodable {
+
+//MARK: - Added new Struct for Storing Data and Calling Weather
+struct WeatherViews: Identifiable, Codable {
     var weathers: WeatherResponse
+    var id = UUID()
 //    var store: Store
-    var id: UUID {
-        UUID()
-    }
+
+
     //MARK: - Current Weather
 
         var currentLocation: String {
@@ -122,7 +124,7 @@ struct WeatherViews: Decodable {
         }
         var currentRain: String {
             return toString(100*(weathers.list.first?.pop ?? 0.0))
-        } 
+        }
     //MARK: - Weekly
         var weeklyDays: [String] {
             return [
@@ -132,10 +134,10 @@ struct WeatherViews: Decodable {
                 DateTime.dayFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(weathers.list[23].date))),
                 DateTime.dayFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(weathers.list[31].date))),
                 DateTime.dayFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(weathers.list[39].date))),
-                
+
             ]
         }
-        
+
     //MARK: - Weather Icons
         var weatherDayIcons: [String] {
             return [
@@ -145,11 +147,11 @@ struct WeatherViews: Decodable {
                 weathers.list[23].weather.first?.icon ?? "",
                 weathers.list[31].weather.first?.icon ?? "",
                 weathers.list[39].weather.first?.icon ?? "",
-                
+
             ]
-            
+
         }
-        
+
     //MARK: - Dates
 
         var dailyDates:[String] {
@@ -161,9 +163,9 @@ struct WeatherViews: Decodable {
                 DateTime.dateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(weathers.list[31].date))),
                 DateTime.dateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(weathers.list[39].date))),
             ]
-            
+
         }
-        
+
     //MARK: - Temperature
         func getTempByUnit(unit: TemperatureUnit) -> [String] {
             switch unit {
@@ -187,7 +189,7 @@ struct WeatherViews: Decodable {
                 ]
             }
         }
-        
+
     //MARK: - Weekly Conditions
         var weeklyConditions: [String] {
             return [
@@ -198,9 +200,9 @@ struct WeatherViews: Decodable {
                 weathers.list[31].weather.first?.description ?? "Sunny",
                 weathers.list[39].weather.first?.description ?? "Sunny",
             ]
-            
+
         }
-        
+
     //MARK: - Functions
         func toString(_ double: Double) -> String {
             return String(format: "%1.f", double)
@@ -208,8 +210,49 @@ struct WeatherViews: Decodable {
         func roundedOf(_ roundOf: Double) -> String {
             return String(format: "%1.f", roundOf)
         }
-       
-        
+    func getWeatherIconFor(icon: String) -> String {
+        switch icon {
+        case "01d":
+            return String("sun")
+        case "01n":
+            return String("moon")
+        case "02d":
+            return String("cloudSun")
+        case "02n":
+            return String("cloudMoon")
+        case "03d":
+            return String("cloud")
+        case "03n":
+            return String("cloudMoon")
+        case "04d":
+            return String("cloudMax")
+        case "04n":
+            return String("cloudMoon")
+        case "09d":
+            return String("rainy")
+        case "09n":
+            return String("rainy")
+        case "10d":
+            return String("rainySun")
+        case "10n":
+            return String("rainyMoon")
+        case "11d":
+            return String("thunderstormSun")
+        case "11n":
+            return String("thunderstormMoon")
+        case "13d":
+            return String("snowy")
+        case "13n":
+            return String("snowy-2")
+        case "50d":
+            return String("tornado")
+        case "50n":
+            return String("tornado")
+        default:
+            return String("sun")
+        }
+
+    }
 }
 
 
