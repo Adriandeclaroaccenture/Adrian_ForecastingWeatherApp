@@ -15,6 +15,8 @@ struct CurrentWeatherView: View {
 //MARK: - Property
     @State private var settingsView: Bool = false
     @State private var activeSheet: Sheets?
+//    let weatherVM: WeatherViews
+//    var city = Constants.CityLocation.city
     @EnvironmentObject var store: Store
     @AppStorage ("isDarkMode") private var isDarkMode = false
 //MARK: - Body

@@ -5,7 +5,7 @@
 //  Created by john.adrian.de.claro on 8/19/22.
 //
 
-//Displaying Cities
+//Displaying Current Weather
 
 
 import SwiftUI

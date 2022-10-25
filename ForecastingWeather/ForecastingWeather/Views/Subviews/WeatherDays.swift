@@ -12,6 +12,7 @@ import SwiftUI
 struct WeatherDays: View {
 //MARK: - Property
     var days: Int
+//    let weatherVM: WeatherViews
     @EnvironmentObject var store: Store
     @ObservedObject var weatherVM = WeatherViewModel()
     @AppStorage ("isDarkMode") private var isDarkMode = false
@@ -46,6 +47,7 @@ struct WeatherDays: View {
 struct WeatherDays_Previews: PreviewProvider {
     static var previews: some View {
         WeatherDays(days: 0)
+//        WeatherDays(days: 0, weatherVM: WeatherViews())
             .environmentObject(Store())
             .previewLayout(.sizeThatFits)
     }

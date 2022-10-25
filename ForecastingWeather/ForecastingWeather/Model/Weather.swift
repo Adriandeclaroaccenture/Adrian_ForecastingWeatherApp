@@ -11,15 +11,27 @@ import UIKit
 
 //MARK: - List
 
-struct WeatherList: Codable, Identifiable {
+struct WeatherList: Codable { //,Identifiable
     var date: Int
     var main: Main
     var weather: [Weather]
     var wind: Wind
     var pop: Double
-    var id: UUID {
-        UUID()
-    }
+//    var id: UUID {
+//        UUID()
+//}
+        
+        //MARK: - JSON Decoder WeatherList
+        init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            let dateTimeInterval = try container.decode(Int32.self, forKey: .date)
+            date = Int(TimeInterval(dateTimeInterval))
+            main = try container.decode(Main.self, forKey: .main)
+            weather = try container.decode([Weather].self, forKey: .weather)
+            wind = try container.decode(Wind.self, forKey: .wind)
+            pop = try container.decode(Double.self, forKey: .pop)
+        }//Json Decoder End
+//    }
     
     enum CodingKeys: String, CodingKey {
         case date = "dt"
@@ -27,6 +39,7 @@ struct WeatherList: Codable, Identifiable {
         case weather = "weather"
         case wind = "wind"
         case pop = "pop"
+
   
 }
     init() {
@@ -49,7 +62,7 @@ struct Weather: Codable, Identifiable {
     var description: String
     var icon: String
     var id: Int {
-        0
+       0
     }
 }
 
@@ -59,12 +72,18 @@ struct Wind: Codable {
 
 //MARK: - City
 
-struct CityName: Codable, Identifiable {
+struct CityName: Codable { //,Identifiable
     var name: String
     var country: String
-    var id: UUID {
-        UUID()
-    }
+//    var id: UUID {
+//        UUID()
+//    }
+    //MARK: - JSON Decoder CityName
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        name = try container.decode(String.self, forKey: .name)
+        country = try container.decode(String.self, forKey: .country)
+    }//Json Decoder End
     
     enum CodingKeys: String, CodingKey {
         case name = "name"
@@ -92,8 +111,9 @@ struct WeatherResponse: Codable {
 //MARK: - Added new Struct for Storing Data and Calling Weather
 struct WeatherViews: Identifiable, Codable {
     var weathers: WeatherResponse
-    var id = UUID()
+    var city = Constants.CityLocation.city
 //    var store: Store
+    var id = UUID()
 
 
     //MARK: - Current Weather

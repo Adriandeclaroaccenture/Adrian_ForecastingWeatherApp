@@ -13,6 +13,7 @@ class Store: ObservableObject {
     
     @Published var tempUnit: TemperatureUnit = .celsius
     @Published var weatherVM: [WeatherViews] = []
+    @Published var locationList: [WeatherViews] = []
 //    @Published var weatherVM: [WeatherViewModel] = [WeatherViewModel]()
     init() {
         tempUnit = UserDefaults.standard.unit

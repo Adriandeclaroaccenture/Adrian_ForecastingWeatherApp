@@ -4,7 +4,7 @@
 //
 //  Created by john.adrian.de.claro on 8/19/22.
 //
-// Display Coordinates on a Physical Device
+// Display Current Location City
 
 
 import SwiftUI
@@ -12,14 +12,17 @@ import SwiftUI
 struct CurrentLocationView: View {
 //MARK: - Property
     @ObservedObject var weatherVM = WeatherViewModel()
+//    let weatherr: WeatherViews
     @AppStorage ("isDarkMode") private var isDarkMode = false
 //MARK: - Body
     var body: some View {
         VStack {
+//            Text("\(weatherr.city)")
             Text("\(weatherVM.city)")
                 .font(.largeTitle)
                 .fontWeight(.semibold)
             Text("\(weatherVM.currentDate)")
+//            Text("\(weatherr.currentDate)")
         }//Vstack
             .preferredColorScheme(isDarkMode ? .dark : .light)
     }
@@ -28,5 +31,7 @@ struct CurrentLocationView: View {
 struct CurrentLocationView_Previews: PreviewProvider {
     static var previews: some View {
         CurrentLocationView()
+//        CurrentLocationView(weatherr: WeatherViews())
+//        CurrentLocationView(weatherVM: WeatherViews(from: WeatherResponse as! Decoder))
     }
 }
