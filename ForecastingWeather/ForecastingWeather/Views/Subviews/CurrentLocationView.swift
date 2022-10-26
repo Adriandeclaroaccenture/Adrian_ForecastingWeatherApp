@@ -12,7 +12,9 @@ import SwiftUI
 struct CurrentLocationView: View {
 //MARK: - Property
     @ObservedObject var weatherVM = WeatherViewModel()
-//    let weatherr: WeatherViews
+//      var weatherr: WeatherViews
+//    let weatherr = WeatherViews(weathers: <#WeatherResponse#>)
+//    var city: String
     @AppStorage ("isDarkMode") private var isDarkMode = false
 //MARK: - Body
     var body: some View {
@@ -31,6 +33,7 @@ struct CurrentLocationView: View {
 struct CurrentLocationView_Previews: PreviewProvider {
     static var previews: some View {
         CurrentLocationView()
+//        CurrentLocationView(weatherr: WeatherViews(), city: "San Pablo City")
 //        CurrentLocationView(weatherr: WeatherViews())
 //        CurrentLocationView(weatherVM: WeatherViews(from: WeatherResponse as! Decoder))
     }

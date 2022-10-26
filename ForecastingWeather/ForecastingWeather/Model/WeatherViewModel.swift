@@ -17,6 +17,7 @@ class WeatherViewModel: ObservableObject {
     @EnvironmentObject var store: Store
 //    @State private var weather = WeatherResponse.empty()
 //    @State private var city = Constants.CityLocation.city {
+    @Published var weatherVM: WeatherViews?
     @Published var weather = WeatherResponse.empty()
     @Published var city = Constants.CityLocation.city {
         didSet {
@@ -58,7 +59,11 @@ class WeatherViewModel: ObservableObject {
             }
         }
     }
+//}// Class WeatherViewModel
 //MARK: - Current Weather
+//struct WeatherViewsModel: Codable {
+    
+//    var weather: WeatherResponse
     
     var currentLocation: String {
         return weather.city.name
@@ -73,6 +78,7 @@ class WeatherViewModel: ObservableObject {
         return weatherDayIcons.first
     }
     var currentTemp: String? {
+//        return getTempByUnit(unit: .celsius)[0]
         return getTempByUnit(unit: store.tempUnit)[0]
     }
     var currentCondition: String? {
@@ -214,5 +220,6 @@ class WeatherViewModel: ObservableObject {
         default:
             return Image("sun")
         }
-    }
+//    }//End Struct
+    }//End Class
 }//End

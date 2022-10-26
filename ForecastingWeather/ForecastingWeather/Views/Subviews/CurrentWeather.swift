@@ -12,6 +12,7 @@ import SwiftUI
 
 struct CurrentWeather: View {
 //MARK: - Property
+//    let weatherVM = WeatherViewsModel()
     @EnvironmentObject var store: Store
     @ObservedObject var weatherVM = WeatherViewModel()
     @AppStorage ("isDarkMode") private var isDarkMode = false
