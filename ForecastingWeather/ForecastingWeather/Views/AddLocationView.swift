@@ -12,7 +12,7 @@ import SwiftUI
 
 struct AddLocationView: View {
 //MARK: - Property
-    @State var currentCity = Constants.CityLocation.city
+    @State var currentCity = Constants.CityLocation.currentCity
     @State private var locationList: [String] = []
 //    @State var locationList: [WeatherViews] = []
     @AppStorage("isDarkMode") private var isDarkMode = false
@@ -80,7 +80,7 @@ struct AddLocationView: View {
             }))
 //MARK: - Add Button
             .navigationBarItems(trailing: Button(action: {
-                Constants.CityLocation.city = currentCity
+                Constants.CityLocation.currentCity = currentCity
                 locationList.append(currentCity)
             }) { //Button
                 TopNavigationBar(title: "Add City").padding()

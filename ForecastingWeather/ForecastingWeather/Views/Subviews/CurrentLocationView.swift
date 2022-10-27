@@ -12,6 +12,7 @@ import SwiftUI
 struct CurrentLocationView: View {
 //MARK: - Property
     @ObservedObject var weatherVM = WeatherViewModel()
+// TEST VAR WEATHERR: WEATHER VIEWS TO CALL FROM THE STRUCT
 //      var weatherr: WeatherViews
 //    let weatherr = WeatherViews(weathers: <#WeatherResponse#>)
 //    var city: String
@@ -32,6 +33,7 @@ struct CurrentLocationView: View {
 //MARK: - Preview
 struct CurrentLocationView_Previews: PreviewProvider {
     static var previews: some View {
+// PREVIEW GETTING A ERROR IN CURRENTLOCATIONVIEW(WEATHERR: WEATHERVIEWS())
         CurrentLocationView()
 //        CurrentLocationView(weatherr: WeatherViews(), city: "San Pablo City")
 //        CurrentLocationView(weatherr: WeatherViews())

@@ -19,7 +19,7 @@ class WeatherViewModel: ObservableObject {
 //    @State private var city = Constants.CityLocation.city {
     @Published var weatherVM: WeatherViews?
     @Published var weather = WeatherResponse.empty()
-    @Published var city = Constants.CityLocation.city {
+    @Published var city = Constants.CityLocation.currentCity {
         didSet {
             getLocation()
         }

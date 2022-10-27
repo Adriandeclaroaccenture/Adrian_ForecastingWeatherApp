@@ -11,6 +11,6 @@ import SwiftUI
 class Constants {
     
     class CityLocation {
-        static var city = "San Pablo City"
+        static var currentCity = "San Pablo City"
     }
 }

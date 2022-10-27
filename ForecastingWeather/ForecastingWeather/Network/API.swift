@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 enum NetworkError: Error {
     case invalidResponse
@@ -19,6 +20,14 @@ struct forecastAPI {
     static func getUrlForecast(latitude: Double, longitude: Double) -> String {
         
         return "https://api.openweathermap.org/data/2.5/forecast?lat=\(latitude)&lon=\(longitude)&appid=96d28c208664698f6c02c4be0dba3e8f&units=metric"
+    }
+}
+
+extension URL {
+    
+    static func getForecastByCity(_ city: String) -> URL? {
+        
+        return URL(string: "https://api.openweathermap.org/data/2.5/forecast?q=\(city)&appid=96d28c208664698f6c02c4be0dba3e8f&units=metric")
     }
 }
 //MARK: - Network Call
