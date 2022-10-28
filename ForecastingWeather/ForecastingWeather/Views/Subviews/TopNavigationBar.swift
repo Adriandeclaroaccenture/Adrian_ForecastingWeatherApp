@@ -4,7 +4,7 @@
 //
 //  Created by john.adrian.de.claro on 8/19/22.
 //
-//Loading Current Location Coordinates
+
 
 import SwiftUI
 

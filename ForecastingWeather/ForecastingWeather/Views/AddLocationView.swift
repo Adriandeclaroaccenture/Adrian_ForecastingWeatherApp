@@ -12,10 +12,12 @@ import SwiftUI
 
 struct AddLocationView: View {
 //MARK: - Property
-    @State var currentCity = Constants.CityLocation.city
+    @State var currentCity = Constants.CityLocation.currentCity
     @State private var locationList: [String] = []
+//    @State var locationList: [WeatherViews] = []
     @AppStorage("isDarkMode") private var isDarkMode = false
     @EnvironmentObject var store: Store
+    @State private var activeSheet: Sheets?
     @Environment(\.presentationMode) var presentationMode
 //MARK: - Body
     var body: some View {
@@ -32,7 +34,7 @@ struct AddLocationView: View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
                             .fill(Color("circleColor"))
-                            .frame(width: 350, height: 50)
+                            .frame(width: 350, height: 60)
                         HStack {
                             Spacer()
                             Image(systemName: "magnifyingglass.circle.fill")
@@ -42,6 +44,7 @@ struct AddLocationView: View {
                                 .padding()
                             Spacer()
                             TextField("Enter City", text: $currentCity)
+//                            TextField("Enter City Name")
                                 .padding(.leading, 10)
                                 .font(.title)
                             Spacer()
@@ -49,14 +52,19 @@ struct AddLocationView: View {
                     }.foregroundColor(Color("textColor"))
                         .padding(.horizontal)
                     //Zstack
-//MARK: - List
+//MARK: - List Adding City
                     List {
                         ForEach(locationList, id: \.self) { location in
                             NavigationLink {
                                 CurrentWeatherView()
+//                                    .frame(width: 350, height: 50)
+//                                    .padding()
                             }//Navigation
                         label: { LocationList(locationCityName: location)
+//                                .frame(height: 50)
+//                                .cornerRadius(10)
                         } .listRowBackground(Color.clear)
+//                                .frame(width: 350, height: 50)
                     }
                         .onDelete(perform: store.deleteWeather) //delete add city
                         //ForEach End
@@ -72,7 +80,7 @@ struct AddLocationView: View {
             }))
 //MARK: - Add Button
             .navigationBarItems(trailing: Button(action: {
-                Constants.CityLocation.city = currentCity
+                Constants.CityLocation.currentCity = currentCity
                 locationList.append(currentCity)
             }) { //Button
                 TopNavigationBar(title: "Add City").padding()

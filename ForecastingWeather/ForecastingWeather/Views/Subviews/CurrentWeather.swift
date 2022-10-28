@@ -5,13 +5,14 @@
 //  Created by john.adrian.de.claro on 8/19/22.
 //
 
-//Displaying Cities
+//Displaying Current Weather
 
 
 import SwiftUI
 
 struct CurrentWeather: View {
 //MARK: - Property
+//    let weatherVM = WeatherViewsModel()
     @EnvironmentObject var store: Store
     @ObservedObject var weatherVM = WeatherViewModel()
     @AppStorage ("isDarkMode") private var isDarkMode = false

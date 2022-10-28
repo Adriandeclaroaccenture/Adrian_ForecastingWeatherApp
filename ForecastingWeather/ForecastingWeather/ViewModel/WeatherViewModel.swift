@@ -17,8 +17,9 @@ class WeatherViewModel: ObservableObject {
     @EnvironmentObject var store: Store
 //    @State private var weather = WeatherResponse.empty()
 //    @State private var city = Constants.CityLocation.city {
+    @Published var weatherVM: WeatherViews?
     @Published var weather = WeatherResponse.empty()
-    @Published var city = Constants.CityLocation.city {
+    @Published var city = Constants.CityLocation.currentCity {
         didSet {
             getLocation()
         }
@@ -45,6 +46,25 @@ class WeatherViewModel: ObservableObject {
         }
         getWeatherStatic(city: city, for: urlString)
     }
+//    func getWeatherStatic(city: String, for urlString: String) {
+//            guard let url = URL (string: urlString) else { return }
+//            NetworkManager<WeatherResponse>.fetchForecast(for: url) { (result) in
+//                switch result {
+//                case .success(let response):
+//                    DispatchQueue.main.async {
+//                        self.weatherVM?.weathers = response
+//                        guard let saveWeather = self.weatherVM else { return }
+//                        self.store.addWeather(saveWeather)
+//                        self.store.loadWeather()
+//                        self.weather = response
+//                        // Clear Persistence after before saving
+//                        // Save response to Persistence
+//                    }
+//                case . failure(let error):
+//                    print(error)
+//                }
+//            }
+//        }
     func getWeatherStatic(city: String, for urlString: String) {
         guard let url = URL (string: urlString) else { return }
         NetworkManager<WeatherResponse>.fetchForecast(for: url) { (result) in
@@ -58,7 +78,11 @@ class WeatherViewModel: ObservableObject {
             }
         }
     }
+//}// Class WeatherViewModel
 //MARK: - Current Weather
+//struct WeatherViewsModel: Codable {
+    
+//    var weather: WeatherResponse
     
     var currentLocation: String {
         return weather.city.name
@@ -73,6 +97,7 @@ class WeatherViewModel: ObservableObject {
         return weatherDayIcons.first
     }
     var currentTemp: String? {
+//        return getTempByUnit(unit: .celsius)[0]
         return getTempByUnit(unit: store.tempUnit)[0]
     }
     var currentCondition: String? {
@@ -214,5 +239,6 @@ class WeatherViewModel: ObservableObject {
         default:
             return Image("sun")
         }
-    }
+//    }//End Struct
+    }//End Class
 }//End
