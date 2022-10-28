@@ -46,6 +46,25 @@ class WeatherViewModel: ObservableObject {
         }
         getWeatherStatic(city: city, for: urlString)
     }
+//    func getWeatherStatic(city: String, for urlString: String) {
+//            guard let url = URL (string: urlString) else { return }
+//            NetworkManager<WeatherResponse>.fetchForecast(for: url) { (result) in
+//                switch result {
+//                case .success(let response):
+//                    DispatchQueue.main.async {
+//                        self.weatherVM?.weathers = response
+//                        guard let saveWeather = self.weatherVM else { return }
+//                        self.store.addWeather(saveWeather)
+//                        self.store.loadWeather()
+//                        self.weather = response
+//                        // Clear Persistence after before saving
+//                        // Save response to Persistence
+//                    }
+//                case . failure(let error):
+//                    print(error)
+//                }
+//            }
+//        }
     func getWeatherStatic(city: String, for urlString: String) {
         guard let url = URL (string: urlString) else { return }
         NetworkManager<WeatherResponse>.fetchForecast(for: url) { (result) in

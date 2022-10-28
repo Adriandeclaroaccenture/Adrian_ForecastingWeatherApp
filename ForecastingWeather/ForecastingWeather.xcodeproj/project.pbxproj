@@ -148,6 +148,7 @@
 				FF5FBA4028F67EDB003AF15B /* JSON Animation */,
 				FF77E37628ACD33E00EF306C /* Views */,
 				FF77E37828ACD35500EF306C /* Model */,
+				FF81505E290B8B61001C1D98 /* ViewModel */,
 				FF77E37728ACD34500EF306C /* Network */,
 				FF970C7728AF5C340041A7B6 /* Store */,
 				FFB6053428CF11D500941F41 /* Extensions */,
@@ -193,14 +194,21 @@
 		FF77E37828ACD35500EF306C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FF77E37D28ACD50500EF306C /* WeatherViewModel.swift */,
 				FF77E37F28ACD57400EF306C /* Weather.swift */,
 				FF5FBA3828F66FD8003AF15B /* AddLocation.swift */,
 				FF5FBA3A28F671F4003AF15B /* Settings.swift */,
-				FFC80B7D290A1FAE009FA78A /* AddCityViewModel.swift */,
 				FFC80B81290A49E9009FA78A /* AddCityForecast.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FF81505E290B8B61001C1D98 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FF77E37D28ACD50500EF306C /* WeatherViewModel.swift */,
+				FFC80B7D290A1FAE009FA78A /* AddCityViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		FF970C7728AF5C340041A7B6 /* Store */ = {
