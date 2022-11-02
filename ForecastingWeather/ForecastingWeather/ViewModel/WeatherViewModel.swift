@@ -86,9 +86,11 @@ class WeatherViewModel: ObservableObject {
     
     var currentLocation: String {
         return weather.city.name
+//        return weatherVM.city.name
     }
     var currentCountry: String {
         return weather.city.country
+//        return weatherVM.city.country
     }
     var currentDate: String {
         return DateTime.defaultDateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval((weather.list.first?.date)!)))

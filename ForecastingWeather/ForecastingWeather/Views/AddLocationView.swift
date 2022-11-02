@@ -66,7 +66,8 @@ struct AddLocationView: View {
                         } .listRowBackground(Color.clear)
 //                                .frame(width: 350, height: 50)
                     }
-                        .onDelete(perform: store.deleteWeather) //delete add city
+                        .onDelete(perform: { indexSet in locationList.remove(atOffsets: indexSet)})
+//                        .onDelete(perform: store.deleteWeather) //delete add city
                         //ForEach End
                     }.listStyle(PlainListStyle()).padding(.horizontal)
                 }//Vstack

@@ -73,9 +73,10 @@ struct Wind: Codable {
 
 //MARK: - City
 
-struct CityName: Codable { //,Identifiable
+struct CityName: Codable, Identifiable { //,Identifiable
     var name: String
     var country: String
+    var id = UUID()
 //    var id: UUID {
 //        UUID()
 //    }
