@@ -12,16 +12,13 @@ import Foundation
 class Store: ObservableObject {
     
     @Published var tempUnit: TemperatureUnit = .celsius
-//    @Published var weatherVM: [WeatherViews] = []
-//    @Published var locationList: [WeatherViews] = []
     @Published var forecastList: [ForecastViewModel] = []
-//    @Published var weatherVM: WeatherViews?
-//    @Published var weatherVM: [WeatherViewModel] = [WeatherViewModel]()
+
     init() {
         tempUnit = UserDefaults.standard.unit
         print(FileManager.docDirURL.path)
         if FileManager().docExist(named: filename) {
-            
+            loadWeather()
         }
         
     }

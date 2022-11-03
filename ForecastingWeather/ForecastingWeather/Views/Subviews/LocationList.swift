@@ -4,7 +4,6 @@
 //
 //  Created by john.adrian.de.claro on 8/19/22.
 //
-// Current Location Button
 
 
 import SwiftUI
@@ -12,10 +11,7 @@ import SwiftUI
 struct LocationList: View {
 //MARK: - Property
     @EnvironmentObject var store: Store
-//    @StateObject var weatherVM = WeatherViewModel()
     let myWeather: ForecastViewModel
-//    @State var myWeather: ForecastViewModel!
-//    @State private var weatherVM: WeatherViews
     @AppStorage ("isDarkMode") private var isDarkMode = false
     
 //    let locationCityName: String
@@ -52,7 +48,7 @@ struct LocationList: View {
 //MARK: - Preview
 struct LocationList_Previews: PreviewProvider {
     static var previews: some View {
-        AddLocationView()
+        AddLocationView().environmentObject(Store())
 //        LocationList(weatherVM: WeatherViewModel(), locationCityName: "San Pablo City")
     }
 }

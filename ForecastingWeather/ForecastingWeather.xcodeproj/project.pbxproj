@@ -35,6 +35,7 @@
 		FF970C7D28AF625E0041A7B6 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF970C7C28AF625E0041A7B6 /* URLImage.swift */; };
 		FF970C8028AF63350041A7B6 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF970C7F28AF63350041A7B6 /* ImageLoader.swift */; };
 		FF970C8228AF645E0041A7B6 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF970C8128AF645E0041A7B6 /* DateExtension.swift */; };
+		FFA6F8BA2913A54100B71D92 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA6F8B92913A54100B71D92 /* LocationManager.swift */; };
 		FFB6053328CF099F00941F41 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB6053228CF099F00941F41 /* SettingsView.swift */; };
 		FFB6053628CF11F700941F41 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB6053528CF11F700941F41 /* UserDefaults.swift */; };
 		FFC80B7E290A1FAE009FA78A /* AddCityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC80B7D290A1FAE009FA78A /* AddCityViewModel.swift */; };
@@ -75,6 +76,7 @@
 		FF970C7C28AF625E0041A7B6 /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
 		FF970C7F28AF63350041A7B6 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		FF970C8128AF645E0041A7B6 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		FFA6F8B92913A54100B71D92 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		FFB6053228CF099F00941F41 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FFB6053528CF11F700941F41 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		FFC80B7D290A1FAE009FA78A /* AddCityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewModel.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			children = (
 				FF970C7828AF5C810041A7B6 /* Store.swift */,
 				FF2F2C0E28FFDCA100DB2003 /* PersistenceController.swift */,
+				FFA6F8B92913A54100B71D92 /* LocationManager.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				FF77E38228ACDE7F00EF306C /* LaunchScreenSplashView.swift in Sources */,
 				FF5FBA3928F66FD8003AF15B /* AddLocation.swift in Sources */,
 				FF77E36B28ACD1D000EF306C /* ContentView.swift in Sources */,
+				FFA6F8BA2913A54100B71D92 /* LocationManager.swift in Sources */,
 				FF77E36928ACD1D000EF306C /* ForecastingWeatherApp.swift in Sources */,
 				FF970C7028AF49C60041A7B6 /* AddLocationView.swift in Sources */,
 				FFB6053328CF099F00941F41 /* SettingsView.swift in Sources */,
