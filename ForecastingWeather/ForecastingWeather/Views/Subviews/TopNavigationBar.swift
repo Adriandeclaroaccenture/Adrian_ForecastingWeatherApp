@@ -27,6 +27,6 @@ struct TopNavigationBar: View {
 //MARK: - Preview
 struct TopNavigationBar_Previews: PreviewProvider {
     static var previews: some View {
-        TopNavigationBar(title: "Add City")
+        TopNavigationBar(title: "Add Cities")
     }
 }

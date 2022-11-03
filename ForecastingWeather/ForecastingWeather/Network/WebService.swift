@@ -30,7 +30,7 @@ class WebService: NSObject {
                 return completion(.failure(.noData))
             }
             
-            guard let forecast = try? JSONDecoder().decode(ForecastList.self, from: data)
+            guard let forecast = try? JSONDecoder().decode(WeatherResponse.self, from: data)
             else {
                 return completion(.failure(.decodingError))
             }

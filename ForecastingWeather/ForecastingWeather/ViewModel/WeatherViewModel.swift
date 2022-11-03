@@ -17,7 +17,7 @@ class WeatherViewModel: ObservableObject {
     @EnvironmentObject var store: Store
 //    @State private var weather = WeatherResponse.empty()
 //    @State private var city = Constants.CityLocation.city {
-    @Published var weatherVM: WeatherViews?
+//    @Published var weatherVM: WeatherViews?
     @Published var weather = WeatherResponse.empty()
     @Published var city = Constants.CityLocation.currentCity {
         didSet {

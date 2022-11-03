@@ -8,10 +8,10 @@
 import Foundation
 
 //MARK: - Struct Forecast
-struct ForecastList: Codable {
-    let cities: CityName
-    let list: [WeatherList]
-}
+//struct ForecastList: Codable {
+//    let cities: CityName
+//    let list: [WeatherList]
+//}
 
 
 //MARK: - Init Cities
@@ -41,8 +41,8 @@ struct ForecastList: Codable {
         let description4: String
 
 
-    init(forecast: ForecastList ) {
-        city = forecast.cities.name
+    init(forecast: WeatherResponse ) {
+        city = forecast.city.name
         temperature0 = forecast.list[0].main.temp
         id = forecast.list[0].weather[0].id
         speed = forecast.list[0].wind.speed
