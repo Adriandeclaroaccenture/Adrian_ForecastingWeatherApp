@@ -2,10 +2,8 @@
 //  Store.swift
 //  ForecastingWeather
 //
-//  Created by john.adrian.de.claro on 8/19/22.
+//  Created by john.adrian.de.claro on 11/7/22.
 //
-
-//Storing Saved Cities
 
 import Foundation
 
@@ -69,3 +67,4 @@ class Store: ObservableObject {
 
 
 }
+
