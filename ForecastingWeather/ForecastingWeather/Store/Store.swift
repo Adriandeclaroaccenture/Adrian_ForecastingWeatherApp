@@ -12,30 +12,28 @@ import Foundation
 class Store: ObservableObject {
     
     @Published var tempUnit: TemperatureUnit = .celsius
-    @Published var weatherVM: [WeatherViews] = []
-    @Published var locationList: [WeatherViews] = []
-//    @Published var weatherVM: WeatherViews?
-//    @Published var weatherVM: [WeatherViewModel] = [WeatherViewModel]()
+    @Published var forecastList: [ForecastViewModel] = []
+
     init() {
         tempUnit = UserDefaults.standard.unit
         print(FileManager.docDirURL.path)
         if FileManager().docExist(named: filename) {
-            
+            loadWeather()
         }
         
     }
     
-    func addWeather(_ weather: WeatherViews) {
-        weatherVM.append(weather)
+    func addWeather(_ weather: ForecastViewModel) {
+        forecastList.append(weather)
         saveWeather()
     }
-    func updateWeather(_ weather: WeatherViews) {
-        guard let index = weatherVM.firstIndex(where: {$0.id == weather.id}) else { return }
-        weatherVM[index] = weather
+    func updateWeather(_ weather: ForecastViewModel) {
+        guard let index = forecastList.firstIndex(where: {$0.id == weather.id}) else { return }
+        forecastList[index] = weather
         saveWeather()
     }
     func deleteWeather(at weather: IndexSet) {
-        weatherVM.remove(atOffsets: weather)
+        forecastList.remove(atOffsets: weather)
         saveWeather()
     }
     func loadWeather() {
@@ -44,7 +42,7 @@ class Store: ObservableObject {
             case .success(let data):
                 let decoder = JSONDecoder()
                 do {
-                    weatherVM = try decoder.decode([WeatherViews].self, from: data)
+                    forecastList = try decoder.decode([ForecastViewModel].self, from: data)
                 } catch {
                     print(error.localizedDescription)
                 }
@@ -57,7 +55,7 @@ class Store: ObservableObject {
         print("Save City Weather")
         let encoder = JSONEncoder()
         do {
-            let data = try encoder.encode(weatherVM)
+            let data = try encoder.encode(forecastList)
             let jsonString = String(decoding: data, as: UTF8.self)
             FileManager().saveDocument(contents: jsonString, docName: filename) { (error) in
                 if let error = error {

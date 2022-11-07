@@ -14,6 +14,7 @@
 		FF5FBA3928F66FD8003AF15B /* AddLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5FBA3828F66FD8003AF15B /* AddLocation.swift */; };
 		FF5FBA3B28F671F4003AF15B /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5FBA3A28F671F4003AF15B /* Settings.swift */; };
 		FF5FBA3F28F67237003AF15B /* WeatherPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5FBA3E28F67237003AF15B /* WeatherPanel.swift */; };
+		FF603390291237D4005ABB10 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF60338F291237D4005ABB10 /* StringExtension.swift */; };
 		FF739FAC28ED248E001C4775 /* BackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF739FAB28ED248E001C4775 /* BackView.swift */; };
 		FF77E36928ACD1D000EF306C /* ForecastingWeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF77E36828ACD1D000EF306C /* ForecastingWeatherApp.swift */; };
 		FF77E36B28ACD1D000EF306C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF77E36A28ACD1D000EF306C /* ContentView.swift */; };
@@ -34,6 +35,7 @@
 		FF970C7D28AF625E0041A7B6 /* URLImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF970C7C28AF625E0041A7B6 /* URLImage.swift */; };
 		FF970C8028AF63350041A7B6 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF970C7F28AF63350041A7B6 /* ImageLoader.swift */; };
 		FF970C8228AF645E0041A7B6 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF970C8128AF645E0041A7B6 /* DateExtension.swift */; };
+		FFA6F8BA2913A54100B71D92 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA6F8B92913A54100B71D92 /* LocationManager.swift */; };
 		FFB6053328CF099F00941F41 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB6053228CF099F00941F41 /* SettingsView.swift */; };
 		FFB6053628CF11F700941F41 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB6053528CF11F700941F41 /* UserDefaults.swift */; };
 		FFC80B7E290A1FAE009FA78A /* AddCityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC80B7D290A1FAE009FA78A /* AddCityViewModel.swift */; };
@@ -52,6 +54,7 @@
 		FF5FBA3828F66FD8003AF15B /* AddLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocation.swift; sourceTree = "<group>"; };
 		FF5FBA3A28F671F4003AF15B /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		FF5FBA3E28F67237003AF15B /* WeatherPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPanel.swift; sourceTree = "<group>"; };
+		FF60338F291237D4005ABB10 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		FF739FAB28ED248E001C4775 /* BackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackView.swift; sourceTree = "<group>"; };
 		FF77E36528ACD1D000EF306C /* ForecastingWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForecastingWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF77E36828ACD1D000EF306C /* ForecastingWeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastingWeatherApp.swift; sourceTree = "<group>"; };
@@ -73,6 +76,7 @@
 		FF970C7C28AF625E0041A7B6 /* URLImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImage.swift; sourceTree = "<group>"; };
 		FF970C7F28AF63350041A7B6 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		FF970C8128AF645E0041A7B6 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		FFA6F8B92913A54100B71D92 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		FFB6053228CF099F00941F41 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FFB6053528CF11F700941F41 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		FFC80B7D290A1FAE009FA78A /* AddCityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewModel.swift; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 				FF5FBA4028F67EDB003AF15B /* JSON Animation */,
 				FF77E37628ACD33E00EF306C /* Views */,
 				FF77E37828ACD35500EF306C /* Model */,
+				FFA6F8B82913936A00B71D92 /* State */,
 				FF81505E290B8B61001C1D98 /* ViewModel */,
 				FF77E37728ACD34500EF306C /* Network */,
 				FF970C7728AF5C340041A7B6 /* Store */,
@@ -195,8 +200,6 @@
 			isa = PBXGroup;
 			children = (
 				FF77E37F28ACD57400EF306C /* Weather.swift */,
-				FF5FBA3828F66FD8003AF15B /* AddLocation.swift */,
-				FF5FBA3A28F671F4003AF15B /* Settings.swift */,
 				FFC80B81290A49E9009FA78A /* AddCityForecast.swift */,
 			);
 			path = Model;
@@ -216,6 +219,7 @@
 			children = (
 				FF970C7828AF5C810041A7B6 /* Store.swift */,
 				FF2F2C0E28FFDCA100DB2003 /* PersistenceController.swift */,
+				FFA6F8B92913A54100B71D92 /* LocationManager.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -229,6 +233,15 @@
 			path = Icon;
 			sourceTree = "<group>";
 		};
+		FFA6F8B82913936A00B71D92 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				FF5FBA3828F66FD8003AF15B /* AddLocation.swift */,
+				FF5FBA3A28F671F4003AF15B /* Settings.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
 		FFB6053428CF11D500941F41 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +249,7 @@
 				FFB6053528CF11F700941F41 /* UserDefaults.swift */,
 				FFD0855628D06B0500903685 /* NavigationView.swift */,
 				FFE58BAE2901214100C6D642 /* FileManager+Extension.swift */,
+				FF60338F291237D4005ABB10 /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -326,6 +340,7 @@
 				FFB6053628CF11F700941F41 /* UserDefaults.swift in Sources */,
 				FF2F2C0F28FFDCA100DB2003 /* PersistenceController.swift in Sources */,
 				FF77E37E28ACD50500EF306C /* WeatherViewModel.swift in Sources */,
+				FF603390291237D4005ABB10 /* StringExtension.swift in Sources */,
 				FF970C6628AF23240041A7B6 /* TopNavigationBar.swift in Sources */,
 				FFEFB9F728DD5780000295CB /* TitleModifier.swift in Sources */,
 				FF3361E328D9948200428D2B /* AboutView.swift in Sources */,
@@ -334,6 +349,7 @@
 				FF77E38228ACDE7F00EF306C /* LaunchScreenSplashView.swift in Sources */,
 				FF5FBA3928F66FD8003AF15B /* AddLocation.swift in Sources */,
 				FF77E36B28ACD1D000EF306C /* ContentView.swift in Sources */,
+				FFA6F8BA2913A54100B71D92 /* LocationManager.swift in Sources */,
 				FF77E36928ACD1D000EF306C /* ForecastingWeatherApp.swift in Sources */,
 				FF970C7028AF49C60041A7B6 /* AddLocationView.swift in Sources */,
 				FFB6053328CF099F00941F41 /* SettingsView.swift in Sources */,
@@ -481,6 +497,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ForecastingWeather/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Accept Permission to get exact location";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -512,6 +529,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ForecastingWeather/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Accept Permission to get exact location";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

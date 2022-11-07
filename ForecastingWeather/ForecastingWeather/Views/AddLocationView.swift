@@ -12,9 +12,10 @@ import SwiftUI
 
 struct AddLocationView: View {
 //MARK: - Property
-    @State var currentCity = Constants.CityLocation.currentCity
+//    @State var currentCity = Constants.CityLocation.currentCity
     @State private var locationList: [String] = []
-//    @State var locationList: [WeatherViews] = []
+    @State var myWeather: ForecastViewModel!
+    @StateObject private var addCityVM = AddCityViewModel()
     @AppStorage("isDarkMode") private var isDarkMode = false
     @EnvironmentObject var store: Store
     @State private var activeSheet: Sheets?
@@ -43,7 +44,7 @@ struct AddLocationView: View {
                                 .frame(width: 35, height: 35)
                                 .padding()
                             Spacer()
-                            TextField("Enter City", text: $currentCity)
+                            TextField("Enter City", text: $addCityVM.city)
 //                            TextField("Enter City Name")
                                 .padding(.leading, 10)
                                 .font(.title)
@@ -54,19 +55,22 @@ struct AddLocationView: View {
                     //Zstack
 //MARK: - List Adding City
                     List {
-                        ForEach(locationList, id: \.self) { location in
+//                        ForEach(locationList, id: \.self) { location in
+                        ForEach(store.forecastList, id: \.cityName) { myWeather in
                             NavigationLink {
                                 CurrentWeatherView()
 //                                    .frame(width: 350, height: 50)
 //                                    .padding()
                             }//Navigation
-                        label: { LocationList(locationCityName: location)
+//                        label: { LocationList(locationCityName: location)
+                        label: { LocationList(myWeather: myWeather)
 //                                .frame(height: 50)
 //                                .cornerRadius(10)
                         } .listRowBackground(Color.clear)
 //                                .frame(width: 350, height: 50)
                     }
-                        .onDelete(perform: store.deleteWeather) //delete add city
+                        .onDelete(perform: store.deleteWeather)
+//                        .onDelete(perform: store.deleteWeather) //delete add city
                         //ForEach End
                     }.listStyle(PlainListStyle()).padding(.horizontal)
                 }//Vstack
@@ -80,8 +84,11 @@ struct AddLocationView: View {
             }))
 //MARK: - Add Button
             .navigationBarItems(trailing: Button(action: {
-                Constants.CityLocation.currentCity = currentCity
-                locationList.append(currentCity)
+                addCityVM.getCity { myWeather in
+                    store.addWeather(myWeather)
+                }
+//                Constants.CityLocation.currentCity = currentCity
+//                locationList.append(currentCity)
             }) { //Button
                 TopNavigationBar(title: "Add City").padding()
             })//Add Button Nav
