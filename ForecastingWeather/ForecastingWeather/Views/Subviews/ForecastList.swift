@@ -11,10 +11,12 @@ struct ForecastList: View {
 //MARK: - Property
     let myWeather: ForecastViewModel
     @EnvironmentObject var store: Store
+    @ObservedObject var weatherVM = WeatherViewModel()
 //MARK: - Body
     var body: some View {
         VStack {
             ScrollView(showsIndicators: false) {
+//MARK: - Main Weather
                 Text(myWeather.cityName)
                     .font(.title)
                     .bold()
@@ -29,6 +31,8 @@ struct ForecastList: View {
                 Text(myWeather.description.capitalized)
             }//ScrollView
         }//Vstack
+//MARK: - 5Days Forecast
+        
     }
 }
 //MARK: - Preview
