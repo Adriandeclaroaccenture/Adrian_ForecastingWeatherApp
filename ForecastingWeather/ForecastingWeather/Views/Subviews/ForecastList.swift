@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ForecastList: View {
 //MARK: - Property
-    let myWeather: DetailedViewModel
+    let myWeather: ForecastViewModel
     @EnvironmentObject var store: Store
 //MARK: - Body
     var body: some View {
@@ -19,14 +19,14 @@ struct ForecastList: View {
                     .font(.title)
                     .bold()
             HStack {
-                myWeather.getWeatherIconForDetailed(detailedIcon: myWeather.icon)
+                myWeather.getWeatherIconForCity(icon: myWeather.icon)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 35, height: 35)
-                Text("\(myWeather.getTempUnit(unit: store.tempUnit)[0])°\(String(store.tempUnit.displayText.prefix(1)))")
+                Text("\(myWeather.getTempByUnit(unit: store.tempUnit))° \(String(store.tempUnit.displayText.prefix(1)))")
                     .font(.system(size: 35))
-                
                 }//Hstack
+                Text(myWeather.description.capitalized)
             }//ScrollView
         }//Vstack
     }

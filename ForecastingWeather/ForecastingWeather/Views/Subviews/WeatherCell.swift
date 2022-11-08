@@ -9,34 +9,39 @@ import SwiftUI
 
 struct WeatherCell: View {
 //MARK: - Property
-    let city: String
-    @ObservedObject var addCityVM = DetailedViewModel()
+//    let weather: WeatherResponse
+    let myWeather: ForecastViewModel
+    @EnvironmentObject var store: Store
 //MARK: - Body
     var body: some View {
-        ZStack {
-            Image("bgImage")
-                .resizable()
-                .ignoresSafeArea(.all)
-            VStack {
-                if addCityVM.loadingState == .loading {
-                    LoadingView()
-                } else if addCityVM.loadingState == .success {
-                    ForecastList(myWeather: addCityVM)
-                } else if addCityVM.loadingState == .failed {
-                    FailedView()
-                }
+        HStack {
+            VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 0) {
+                    Text(myWeather.cityName)
+                        .font(.title)
+                        .fontWeight(.bold)
+                }//Vstack
             }//Vstack
-            .onAppear {
-                self.addCityVM.getByCity(city: self.city)
-            }
-        }//Zstack
-        .navigationBarHidden(true)
+            VStack {
+                HStack {
+                Spacer()
+                myWeather.getWeatherIconForCity(icon: myWeather.icon)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 35, height: 35)
+                Text("\(myWeather.getTempByUnit(unit: store.tempUnit))° \(String(store.tempUnit.displayText.prefix(1)))")
+                        .font(.title)
+                }//Hstack
+                Spacer()
+                Text(myWeather.description.capitalized)
+                    .font(.system(size: 15))
+            }//Vstack
+        }//Hstack
     }
 }
 //MARK: - Preview
-struct WeatherCell_Previews: PreviewProvider {
-    static var previews: some View {
-        WeatherCell(city: "San Pablo City")
-            .environmentObject(Store())
-    }
-}
+//struct WeatherCell_Previews: PreviewProvider {
+//    static var previews: some View {
+//        WeatherCell()
+//    }
+//}

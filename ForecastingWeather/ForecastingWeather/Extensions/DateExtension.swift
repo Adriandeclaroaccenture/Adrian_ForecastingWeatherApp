@@ -35,6 +35,6 @@ class DateTime {
         formatter.dateFormat = "hh a"
         return formatter
     }()
-    
+
 }
 
