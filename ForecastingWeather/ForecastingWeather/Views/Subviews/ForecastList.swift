@@ -32,7 +32,12 @@ struct ForecastList: View {
             }//ScrollView
         }//Vstack
 //MARK: - 5Days Forecast
-        
+        ScrollView (.vertical) {
+            Text("5 Days Forecast")
+            ForEach((1...5), id:\.self) { day in
+                WeatherDays(days: day)
+            }//ForEach
+        }
     }
 }
 //MARK: - Preview
