@@ -11,7 +11,7 @@ struct ForecastList: View {
 //MARK: - Property
     let myWeather: ForecastViewModel
     @EnvironmentObject var store: Store
-    @ObservedObject var weatherVM = WeatherViewModel()
+//    @ObservedObject var weatherVM = WeatherViewModel()
 //MARK: - Body
     var body: some View {
         VStack {
@@ -32,12 +32,14 @@ struct ForecastList: View {
             }//ScrollView
         }//Vstack
 //MARK: - 5Days Forecast
-        ScrollView (.vertical) {
-            Text("5 Days Forecast")
-            ForEach((1...5), id:\.self) { day in
-                WeatherDays(days: day)
-            }//ForEach
-        }
+        
+//MARK: - Test
+//        ScrollView (.vertical) {
+//            Text("5 Days Forecast")
+//            ForEach((1...5), id:\.self) { day in
+//                WeatherDays(days: day)
+//            }//ForEach
+//        }
     }
 }
 //MARK: - Preview
