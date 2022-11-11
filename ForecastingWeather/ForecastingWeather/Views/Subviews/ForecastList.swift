@@ -54,9 +54,9 @@ struct ForecastList: View {
         //            }//ForEach
         //        }
      
-            }
+        }//NavigationView
         }
-}//NavigationView
+}
 //MARK: - Test
 
 

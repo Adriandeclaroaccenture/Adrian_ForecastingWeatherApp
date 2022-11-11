@@ -29,7 +29,7 @@ struct AddLocationView: View {
                         Text("Location").foregroundColor(Color("textColor"))
                             .fontWeight(.bold)
                             .font(.title)
-                        Spacer().frame(width: 235)
+                        Spacer().frame(width: 200)
                     }.padding(.horizontal) //Hstack
 //MARK: - Search
                     ZStack {
@@ -75,25 +75,27 @@ struct AddLocationView: View {
 //                        .onDelete(perform: store.deleteWeather) //delete add city
                         //ForEach End
                     }.listStyle(PlainListStyle()).padding(.horizontal)
+                
                 }//Vstack
                 .padding(.horizontal)
-            }//Zstack
-//MARK: - Navigation
-            .navigationBarItems(leading: Button(action: {}, label: {
-                NavigationLink(destination: CurrentWeatherView()) {
-                    TopNavigationBar(title: "Return").padding()
-                }//NavigationLink
-            }))
-//MARK: - Add Button
-            .navigationBarItems(trailing: Button(action: {
-                addCityVM.getCity { myWeather in
-                    store.addWeather(myWeather)
-                }
-//                Constants.CityLocation.currentCity = currentCity
-//                locationList.append(currentCity)
-            }) { //Button
-                TopNavigationBar(title: "Add City").padding()
-            })//Add Button Nav
+            //MARK: - Navigation
+                        .navigationBarItems(leading: Button(action: {}, label: {
+                            NavigationLink(destination: CurrentWeatherView()) {
+                                TopNavigationBar(title: "Return").padding()
+                            } //NavigationLink
+                        }))
+            //MARK: - Add Button
+                        .navigationBarItems(trailing: Button(action: {
+                            addCityVM.getCity { myWeather in
+                                store.addWeather(myWeather)
+                            }
+            //                Constants.CityLocation.currentCity = currentCity
+            //                locationList.append(currentCity)
+                        }) { //Button
+                            TopNavigationBar(title: "Add City").padding()
+                        })//Add Button Nav
+        }.navigationBarHidden(true)//Navigation
+
             .background(
             Image("bgImage")
                 .resizable()
