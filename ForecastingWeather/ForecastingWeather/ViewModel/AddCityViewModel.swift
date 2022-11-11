@@ -61,6 +61,8 @@ struct ForecastViewModel: Identifiable, Codable {
         ]
     }
     
+    
+    
 //MARK: - Function TempUnit
     func getTempByUnit(unit: TemperatureUnit) -> String {
         switch unit {

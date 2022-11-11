@@ -48,11 +48,11 @@ struct WeatherDays: View {
     }
 }
 //MARK: - Preview
-//struct WeatherDays_Previews: PreviewProvider {
-//    static var previews: some View {
-//        WeatherDays(days: 0)
-////        WeatherDays(days: 0, weatherVM: WeatherViews())
-//            .environmentObject(Store())
-//            .previewLayout(.sizeThatFits)
-//    }
-//}
+struct WeatherDays_Previews: PreviewProvider {
+    static var previews: some View {
+        WeatherDays(days: 0)
+//        WeatherDays(days: 0, weatherVM: WeatherViews())
+            .environmentObject(Store())
+            .previewLayout(.sizeThatFits)
+    }
+}

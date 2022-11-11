@@ -15,14 +15,20 @@ struct DailyRow: View {
 //MARK: - Body
     var body: some View {
         HStack {
-            Today(day: day)
-                .frame(maxWidth: .infinity, alignment: .leading)
-            
-            Icon(logo: logo)
-                .frame(maxWidth: .infinity, alignment: .center)
-            
-            Temp(temp: temp)
-                .frame(maxWidth: .infinity, alignment: .trailing)
+            Text(day)
+//                .frame(maxWidth: .infinity, alignment: .leading)
+                .fontWeight(.bold)
+                .font(.title2)
+            Image(logo)
+//                .frame(maxWidth: .infinity, alignment: .center)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 70, height: 70, alignment: .trailing)
+            Spacer().frame(width: 80)
+            Text(temp)
+//                .frame(maxWidth: .infinity, alignment: .trailing)
+                .fontWeight(.bold)
+                .font(.title2)
         }//hstack
     }
 }
@@ -33,34 +39,33 @@ struct DailyRow_Previews: PreviewProvider {
     }
 }
 
-//MARK: - Struct Today
-struct Today: View {
-    
-    var day: String
-    
-    var body: some View {
-        Text(day)
-            .font(.title3)
-    }
-}
-//MARK: - Struct Icon
-struct Icon: View {
-    
-    var logo: String
-    
-    var body: some View {
-        Image(systemName: logo)
-            .resizable()
-            .frame(width: 20, height: 20)
-    }
-}
-//MARK: - Struct Temp
-struct Temp: View {
-    
-    var temp: String
-    
-    var body: some View {
-        Text(temp)
-            .font(.title3)
-    }
-}
+////MARK: - Struct Today
+//struct Today: View {
+//
+//    var day: String
+//
+//    var body: some View {
+//        Text(day)
+//            .font(.title3)
+//    }
+//}
+////MARK: - Struct Icon
+//struct Icon: View {
+//
+//    var logo: Image
+//
+//    var body: some View {
+//        Text(logo)
+//            .frame(width: 20, height: 20)
+//    }
+//}
+////MARK: - Struct Temp
+//struct Temp: View {
+//
+//    var temp: String
+//
+//    var body: some View {
+//        Text(temp)
+//            .font(.title3)
+//    }
+//}
