@@ -29,7 +29,7 @@ struct AddLocationView: View {
                         Text("Location").foregroundColor(Color("textColor"))
                             .fontWeight(.bold)
                             .font(.title)
-                        Spacer().frame(width: 235)
+                        Spacer().frame(width: 200)
                     }.padding(.horizontal) //Hstack
 //MARK: - Search
                     ZStack {
@@ -56,52 +56,56 @@ struct AddLocationView: View {
 //MARK: - List Adding City
                     List {
 //                        ForEach(locationList, id: \.self) { location in
+                        //                            NavigationLink {
+                        //                                CurrentWeatherView()
                         ForEach(store.forecastList, id: \.cityName) { myWeather in
-                            NavigationLink {
-                                CurrentWeatherView()
-//                                    .frame(width: 350, height: 50)
-//                                    .padding()
-                            }//Navigation
+                            NavigationLink(destination: DetailScreen(myWeather: myWeather)) {
+                                WeatherCell(myWeather: myWeather)
+                            }
+//                            }//Navigation
 //                        label: { LocationList(locationCityName: location)
-                        label: { LocationList(myWeather: myWeather)
+//                        label: { LocationList(myWeather: myWeather)
 //                                .frame(height: 50)
 //                                .cornerRadius(10)
-                        } .listRowBackground(Color.clear)
+                        } .onDelete(perform: store.deleteWeather)
+                        .listRowBackground(Color.clear)
 //                                .frame(width: 350, height: 50)
                     }
-                        .onDelete(perform: store.deleteWeather)
+//                        .onDelete(perform: store.deleteWeather)
 //                        .onDelete(perform: store.deleteWeather) //delete add city
                         //ForEach End
                     }.listStyle(PlainListStyle()).padding(.horizontal)
+                
                 }//Vstack
                 .padding(.horizontal)
-            }//Zstack
-//MARK: - Navigation
-            .navigationBarItems(leading: Button(action: {}, label: {
-                NavigationLink(destination: CurrentWeatherView()) {
-                    TopNavigationBar(title: "Return").padding()
-                }//NavigationLink
-            }))
-//MARK: - Add Button
-            .navigationBarItems(trailing: Button(action: {
-                addCityVM.getCity { myWeather in
-                    store.addWeather(myWeather)
-                }
-//                Constants.CityLocation.currentCity = currentCity
-//                locationList.append(currentCity)
-            }) { //Button
-                TopNavigationBar(title: "Add City").padding()
-            })//Add Button Nav
+            //MARK: - Navigation
+                        .navigationBarItems(leading: Button(action: {}, label: {
+                            NavigationLink(destination: CurrentWeatherView()) {
+                                TopNavigationBar(title: "Return").padding()
+                            } //NavigationLink
+                        }))
+            //MARK: - Add Button
+                        .navigationBarItems(trailing: Button(action: {
+                            addCityVM.getCity { myWeather in
+                                store.addWeather(myWeather)
+                            }
+            //                Constants.CityLocation.currentCity = currentCity
+            //                locationList.append(currentCity)
+                        }) { //Button
+                            TopNavigationBar(title: "Add City").padding()
+                        })//Add Button Nav
+        }.navigationBarHidden(true)//Navigation
+
             .background(
             Image("bgImage")
                 .resizable()
                 .scaledToFill()
                 .ignoresSafeArea(.all))
         }//Navigation
-        .preferredColorScheme(isDarkMode ? .dark : .light)
-        .navigationBarHidden(true)
+//        .preferredColorScheme(isDarkMode ? .dark : .light)
+//        .navigationBarHidden(true)
     }//Body
-}// End View
+//}// End View
 //MARK: - Preview
 struct AddLocationView_Previews: PreviewProvider {
     static var previews: some View {

@@ -14,6 +14,7 @@ struct WeatherDays: View {
     var days: Int
 //    let weatherVM: WeatherViews
     @EnvironmentObject var store: Store
+//    let myWeather: ForecastViewModel
     @ObservedObject var weatherVM = WeatherViewModel()
     @AppStorage ("isDarkMode") private var isDarkMode = false
 //MARK: - Body
@@ -27,6 +28,9 @@ struct WeatherDays: View {
                     Text("\(weatherVM.dailyDates[days])")
                         .fontWeight(.light)
                 }//Hstack
+//                Text("\(myWeather.getTempByUnit(unit: store.tempUnit))° \(String(store.tempUnit.displayText.prefix(1)))")
+//                    .fontWeight(.bold)
+//                    .font(.title2)
                 Text("\(weatherVM.getTempByUnit(unit: store.tempUnit)[days])°\(String(store.tempUnit.displayText.prefix(1)))")
                     .fontWeight(.bold)
                     .font(.title2)

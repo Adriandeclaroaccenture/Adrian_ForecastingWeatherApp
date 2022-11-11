@@ -29,6 +29,7 @@ class AddCityViewModel: ObservableObject {
 //MARK: - Struct Forecast View Model
 
 struct ForecastViewModel: Identifiable, Codable {
+    var weather = WeatherResponse.empty()
     let myWeather: MyWeather
     var id = UUID()
     
@@ -44,6 +45,23 @@ struct ForecastViewModel: Identifiable, Codable {
     var description: String {
         return myWeather.description0
     }
+//MARK: - Dates
+    var dates2: String {
+        return DateTime.defaultDateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval((weather.list.first?.date)!)))
+    }
+    var dates:[String] {
+        return
+        [
+            DateTime.dayFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(weather.list[0].date))),
+            DateTime.dayFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(weather.list[7].date))),
+            DateTime.dayFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(weather.list[15].date))),
+            DateTime.dayFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(weather.list[23].date))),
+            DateTime.dayFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(weather.list[31].date))),
+            DateTime.dayFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(weather.list[39].date))),
+        ]
+    }
+    
+    
     
 //MARK: - Function TempUnit
     func getTempByUnit(unit: TemperatureUnit) -> String {
