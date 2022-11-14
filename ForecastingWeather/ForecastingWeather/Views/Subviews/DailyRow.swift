@@ -12,6 +12,7 @@ struct DailyRow: View {
     var logo: String
     var day: String
     var temp: String
+    @AppStorage ("isDarkMode") private var isDarkMode = false
 //MARK: - Body
     var body: some View {
         HStack {

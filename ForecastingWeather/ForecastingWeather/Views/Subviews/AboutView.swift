@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AboutView: View {
 //MARK: - Property
+@AppStorage ("isDarkMode") private var isDarkMode = false
 //MARK: - Body
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {

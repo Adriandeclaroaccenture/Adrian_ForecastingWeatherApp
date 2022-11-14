@@ -12,6 +12,7 @@ struct WeatherCell: View {
 //    let weather: WeatherResponse
     let myWeather: ForecastViewModel
     @EnvironmentObject var store: Store
+    @AppStorage ("isDarkMode") private var isDarkMode = false
 //MARK: - Body
     var body: some View {
         HStack {

@@ -31,6 +31,7 @@
 		FF77E38028ACD57400EF306C /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF77E37F28ACD57400EF306C /* Weather.swift */; };
 		FF77E38228ACDE7F00EF306C /* LaunchScreenSplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF77E38128ACDE7F00EF306C /* LaunchScreenSplashView.swift */; };
 		FF8389C928FE9E7700C322D5 /* WeatherData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF8389C728FE9E7700C322D5 /* WeatherData.xcdatamodeld */; };
+		FF957C852921DE71007A8760 /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF957C842921DE71007A8760 /* NetworkConnection.swift */; };
 		FF970C6228AF110D0041A7B6 /* LocationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF970C6128AF110C0041A7B6 /* LocationList.swift */; };
 		FF970C6428AF222B0041A7B6 /* CurrentLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF970C6328AF222B0041A7B6 /* CurrentLocationView.swift */; };
 		FF970C6628AF23240041A7B6 /* TopNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF970C6528AF23240041A7B6 /* TopNavigationBar.swift */; };
@@ -79,6 +80,7 @@
 		FF77E37F28ACD57400EF306C /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		FF77E38128ACDE7F00EF306C /* LaunchScreenSplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenSplashView.swift; sourceTree = "<group>"; };
 		FF8389C828FE9E7700C322D5 /* WeatherData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeatherData.xcdatamodel; sourceTree = "<group>"; };
+		FF957C842921DE71007A8760 /* NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
 		FF970C6128AF110C0041A7B6 /* LocationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationList.swift; sourceTree = "<group>"; };
 		FF970C6328AF222B0041A7B6 /* CurrentLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationView.swift; sourceTree = "<group>"; };
 		FF970C6528AF23240041A7B6 /* TopNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationBar.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				FF81505E290B8B61001C1D98 /* ViewModel */,
 				FF77E37728ACD34500EF306C /* Network */,
 				FF970C7728AF5C340041A7B6 /* Store */,
+				FF957C832921DE46007A8760 /* Services */,
 				FFB6053428CF11D500941F41 /* Extensions */,
 				FFEFB9F528DD5766000295CB /* Modifier */,
 				FF970C7E28AF631B0041A7B6 /* Icon */,
@@ -235,11 +238,19 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		FF957C832921DE46007A8760 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FFA6F8B92913A54100B71D92 /* LocationManager.swift */,
+				FF957C842921DE71007A8760 /* NetworkConnection.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		FF970C7728AF5C340041A7B6 /* Store */ = {
 			isa = PBXGroup;
 			children = (
 				FF2F2C0E28FFDCA100DB2003 /* PersistenceController.swift */,
-				FFA6F8B92913A54100B71D92 /* LocationManager.swift */,
 				FF185778291910F7000991B9 /* Store.swift */,
 			);
 			path = Store;
@@ -394,6 +405,7 @@
 				FF970C7D28AF625E0041A7B6 /* URLImage.swift in Sources */,
 				FF5FBA3728F666A7003AF15B /* API.swift in Sources */,
 				FF5FBA3528F6643B003AF15B /* Constants.swift in Sources */,
+				FF957C852921DE71007A8760 /* NetworkConnection.swift in Sources */,
 				FFDCAA00291A048B00FCC7B4 /* DetailScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
