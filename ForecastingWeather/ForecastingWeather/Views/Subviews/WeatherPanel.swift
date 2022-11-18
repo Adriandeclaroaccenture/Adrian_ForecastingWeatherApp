@@ -11,6 +11,7 @@ struct WeatherPanel: View {
 //MARK: - Property
     var image: String
     var value: String
+    @AppStorage ("isDarkMode") private var isDarkMode = false
 //MARK: - Body
     var body: some View {
         VStack (alignment: .center) {

@@ -13,6 +13,7 @@ struct ForecastList: View {
     @EnvironmentObject var store: Store
     var weather = WeatherResponse.empty()
     @ObservedObject var weatherVM = WeatherViewModel()
+    @AppStorage ("isDarkMode") private var isDarkMode = false
 //    @ObservedObject var weatherVM = WeatherViewModel()
 //MARK: - Body
     var body: some View {
@@ -54,10 +55,9 @@ struct ForecastList: View {
         //            }//ForEach
         //        }
      
-        }//NavigationView
+            }//NavigationView
         }
 }
-//MARK: - Test
 
 
 //MARK: - Preview

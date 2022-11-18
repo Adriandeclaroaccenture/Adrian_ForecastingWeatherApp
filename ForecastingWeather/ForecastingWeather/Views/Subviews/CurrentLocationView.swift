@@ -12,6 +12,7 @@ import SwiftUI
 struct CurrentLocationView: View {
 //MARK: - Property
     @ObservedObject var weatherVM = WeatherViewModel()
+    @ObservedObject var currentCityVM = CurrentCityViewModel(weatherService: WeatherService())
 // TEST VAR WEATHERR: WEATHER VIEWS TO CALL FROM THE STRUCT
 //      var weatherr: WeatherViews
 //    let weatherr = WeatherViews(weathers: <#WeatherResponse#>)
@@ -21,12 +22,13 @@ struct CurrentLocationView: View {
     var body: some View {
         VStack {
 //            Text("\(weatherr.city)")
-            Text("\(weatherVM.city)")
+//            Text("\(weatherVM.city)")
+            Text(currentCityVM.cityName)
                 .font(.largeTitle)
                 .fontWeight(.semibold)
             Text("\(weatherVM.currentDate)")
 //            Text("\(weatherr.currentDate)")
-        }//Vstack
+        }.onAppear(perform: currentCityVM.refresh)//Vstack
             .preferredColorScheme(isDarkMode ? .dark : .light)
     }
 }
@@ -34,7 +36,7 @@ struct CurrentLocationView: View {
 struct CurrentLocationView_Previews: PreviewProvider {
     static var previews: some View {
 // PREVIEW GETTING A ERROR IN CURRENTLOCATIONVIEW(WEATHERR: WEATHERVIEWS())
-        CurrentLocationView()
+        CurrentLocationView(currentCityVM: CurrentCityViewModel(weatherService: WeatherService()))
 //        CurrentLocationView(weatherr: WeatherViews(), city: "San Pablo City")
 //        CurrentLocationView(weatherr: WeatherViews())
 //        CurrentLocationView(weatherVM: WeatherViews(from: WeatherResponse as! Decoder))

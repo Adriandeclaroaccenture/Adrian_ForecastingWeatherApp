@@ -10,6 +10,7 @@ import SwiftUI
 struct DetailScreen: View {
 //MARK: - Property
     @State var myWeather: ForecastViewModel!
+    @AppStorage ("isDarkMode") private var isDarkMode = false
 //MARK: - Body
     var body: some View {
         ZStack {

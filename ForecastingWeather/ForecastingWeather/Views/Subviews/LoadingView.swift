@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct LoadingView: View {
+//MARK: - Property
+    @AppStorage ("isDarkMode") private var isDarkMode = false
 //MARK: - Body
     var body: some View {
         ProgressView()

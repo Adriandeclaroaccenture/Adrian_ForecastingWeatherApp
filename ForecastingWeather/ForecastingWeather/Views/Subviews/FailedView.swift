@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct FailedView: View {
+//MARK: - Property
+    @AppStorage ("isDarkMode") private var isDarkMode = false
 //MARK: - Body
     var body: some View {
         Image(systemName: "questionmark.square.fill")
